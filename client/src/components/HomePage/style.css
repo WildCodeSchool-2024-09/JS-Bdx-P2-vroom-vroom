@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--dark);
+}
+
+:root {
+  --light: #fbfcfa;
+  --dark: #2e3035;
+  --PrincipalColor: #ff1801;
+  --textLight: #dcdee1;
+
+  --textPolice: "Atkinson Hyperlegible", sans-serif;
+  --titlePolice: "Racing Sans One", sans-serif;
+}
+
+body {
+  padding: 2rem;
+}
+
+h1 {
+  color: var(--PrincipalColor);
+  font-family: var(--titlePolice);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  color: var(--light);
+  font-family: var(--textPolice);
+  margin: auto;
+}
