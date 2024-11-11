@@ -50,14 +50,14 @@ export default function SeasonCountdown() {
   return (
     <article>
       <p>Fin de la saison</p>
-      <p>
-        {"-"}
-        {endSeasonTimeLeft.days} {endSeasonTimeLeft.hours}
-        {":"}
-        {endSeasonTimeLeft.minutes}
-        {":"}
-        {endSeasonTimeLeft.seconds}
-      </p>
+      <p>{endSeasonTimeLeft.days}</p>
+      <p>{endSeasonTimeLeft.hours}</p>
+      <p>{endSeasonTimeLeft.minutes}</p>
+      <p>{endSeasonTimeLeft.seconds}</p>
+      <p>Jours</p>
+      <p>Heures</p>
+      <p>Minutes</p>
+      <p>Secondes</p>
     </article>
   );
 }

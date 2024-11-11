@@ -15,10 +15,6 @@
   --titlePolice: "Racing Sans One", sans-serif;
 }
 
-body {
-  padding: 2rem;
-}
-
 h1 {
   color: var(--PrincipalColor);
   font-family: var(--titlePolice);

@@ -50,14 +50,14 @@ export default function RaceCountdown() {
   return (
     <article>
       <p>Prochaine course</p>
-      <p>
-        {"-"}
-        {raceTimeLeft.days} {raceTimeLeft.hours}
-        {":"}
-        {raceTimeLeft.minutes}
-        {":"}
-        {raceTimeLeft.seconds}
-      </p>
+      <p>{raceTimeLeft.days}</p>
+      <p>{raceTimeLeft.hours}</p>
+      <p>{raceTimeLeft.minutes}</p>
+      <p>{raceTimeLeft.seconds}</p>
+      <p>Jours</p>
+      <p>Heures</p>
+      <p>Minutes</p>
+      <p>Secondes</p>
     </article>
   );
 }

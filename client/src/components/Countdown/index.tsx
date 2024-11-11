@@ -7,8 +7,8 @@ export default function Countdown() {
   return (
     <section>
       <h2>Compte à rebours</h2>
-      <SeasonCountdown />
       <RaceCountdown />
+      <SeasonCountdown />
     </section>
   );
 }
