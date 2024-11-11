@@ -1,0 +1,10 @@
+h2 {
+  display: none;
+  columns: span2;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
