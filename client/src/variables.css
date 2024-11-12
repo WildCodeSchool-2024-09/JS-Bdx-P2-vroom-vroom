@@ -1,0 +1,15 @@
+:root {
+  --light: #fbfcfa;
+  --dark: #2e3035;
+  --PrincipalColor: #ff1801;
+  --textLight: #dcdee1;
+
+  --textPolice: "Atkinson Hyperlegible", sans-serif;
+  --titlePolice: "Racing Sans One", sans-serif;
+
+  --spacing: 1rem;
+  --spacingXS: calc(var(--spacing) * 0.75);
+  --spacingXXS: calc(var(--spacing) * 0.5);
+  --spacingXXXS: calc(var(--spacing) * 0.25);
+  --spacingM: calc(var(--spacing) * 1.5);
+}

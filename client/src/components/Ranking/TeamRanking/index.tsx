@@ -1,5 +1,6 @@
 // Team Ranking
 import { useEffect, useState } from "react";
+import styles from "../Ranking.module.css";
 import TeamsDisplay from "./Table";
 
 type Team = {
@@ -26,7 +27,7 @@ export default function TeamRanking() {
   }, []);
 
   return (
-    <section>
+    <section className={styles.RankingSection}>
       <h2>Classement Écuries</h2>
       {rank.map((team: Team) => (
         <TeamsDisplay

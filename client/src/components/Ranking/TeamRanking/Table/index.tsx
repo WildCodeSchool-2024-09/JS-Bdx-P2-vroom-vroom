@@ -1,4 +1,5 @@
 // Création d'un affichage Écuries
+import styles from "../../Ranking.module.css";
 
 type Team = {
   position: string;
@@ -11,10 +12,10 @@ type Team = {
 
 export default function TeamsDisplay({ position, points, Constructor }: Team) {
   return (
-    <article>
-      <p>{position}</p>
-      <p>{Constructor.name}</p>
-      <p>{points}</p>
+    <article className={styles.RankingArticle}>
+      <p className={styles.RankingPos}>{position}</p>
+      <p className={styles.RankingName}>{Constructor.name}</p>
+      <p className={styles.RankingPoints}>{points}</p>
     </article>
   );
 }

@@ -1,4 +1,5 @@
 // Création d'un affichage Pilote
+import styles from "../../Ranking.module.css";
 
 type Driver = {
   position: string;
@@ -21,13 +22,13 @@ export default function DriversDisplay({
   Constructors,
 }: Driver) {
   return (
-    <article>
-      <p>{position}</p>
-      <p>
+    <article className={styles.RankingArticle}>
+      <p className={styles.RankingPos}>{position}</p>
+      <p className={styles.RankingName}>
         {Driver.givenName} {Driver.familyName}
       </p>
-      <p>{Constructors[0].name}</p>
-      <p>{points}</p>
+      <p className={styles.RankingConstructor}>{Constructors[0].name}</p>
+      <p className={styles.RankingPoints}>{points}</p>
     </article>
   );
 }

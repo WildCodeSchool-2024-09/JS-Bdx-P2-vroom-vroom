@@ -1,8 +1,56 @@
-section {
+@import url(../../variables.css);
+
+.RankingGlobalSection {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
-p {
+.RankingSection {
+  border-radius: 11px;
+  background-color: #3d3f43;
+  width: clamp(18rem, 75vw, 35rem);
+  margin: var(--spacing) auto;
+}
+
+.RankingArticle {
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, transparent, var(--dark), transparent)
+    1;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  padding: var(--spacingM) 0;
+}
+
+.RankingPos {
+  grid-area: 1 / 1 / 3 / 2;
+  font-size: 1.5rem;
+}
+
+.RankingName {
+  grid-area: 1 / 2 / 2 / 3;
+  font-size: 1.25rem;
+}
+
+.RankingConstructor {
+  grid-area: 2 / 2 / 3 / 3;
+  color: #babbbc;
   font-size: 1rem;
+}
+
+.RankingPoints {
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+@media screen and (min-width: 481px) {
+  .RankingGlobalSection {
+    flex-direction: row;
+    gap: var(--spacingXXS);
+  }
+
+  .RankingP {
+    font-size: var(--spacing);
+    padding: var(--spacing) 0;
+  }
 }

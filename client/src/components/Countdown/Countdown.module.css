@@ -1,3 +1,5 @@
+@import url("../../variables.css");
+
 .CountdownTitle {
   display: none;
   columns: span 2;
@@ -14,15 +16,15 @@
   background-image: url("../../assets/images/countdown_bg.avif");
   background-size: cover;
   background-position: center 75%;
-  border-bottom: 5px solid #ff1801;
-  border-top: 5px solid #ff1801;
+  border-bottom: 5px solid var(--PrincipalColor);
+  border-top: 5px solid var(--PrincipalColor);
 }
 
 .CountdownArticle {
-  background-color: rgba(46, 48, 53);
+  background-color: var(--dark);
   border-radius: 11px;
-  margin: 1rem 0;
-  padding: 0 .5rem;
+  margin: var(--spacing) 0;
+  padding: 0 var(--spacingXXS);
 
   width: 15rem;
   height: 5rem;
@@ -32,7 +34,7 @@
 }
 
 .CountdownP {
-  font-size: .75rem;
+  font-size: var(--spacingXS);
 }
 
 .CountdownP:first-child {
@@ -40,12 +42,13 @@
 }
 
 .CountdownPTime {
-  font-size: 1.5rem;
+  font-size: var(--spacingM);
 }
 
 @media screen and (min-width: 481px) {
   .CountdownSection {
     flex-direction: row;
+    gap: var(--spacingXXS);
     justify-content: space-around;
   }
 }

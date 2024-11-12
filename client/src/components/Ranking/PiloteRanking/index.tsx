@@ -1,5 +1,6 @@
 // Pilote Ranking
 import { useEffect, useState } from "react";
+import styles from "../Ranking.module.css";
 import DriversDisplay from "./Table";
 
 type Driver = {
@@ -29,7 +30,7 @@ export default function PiloteRanking() {
   }, []);
 
   return (
-    <section>
+    <section className={styles.RankingSection}>
       <h2>Classement Pilote</h2>
       {rank.map((driver: Driver) => (
         <DriversDisplay
