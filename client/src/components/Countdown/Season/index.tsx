@@ -1,5 +1,6 @@
 // Season Countdown
 import { useEffect, useState } from "react";
+import styles from "../Countdown.module.css";
 
 type Date = {
   MRData: {
@@ -48,16 +49,16 @@ export default function SeasonCountdown() {
   });
 
   return (
-    <article>
-      <p>Fin de la saison</p>
-      <p>{endSeasonTimeLeft.days}</p>
-      <p>{endSeasonTimeLeft.hours}</p>
-      <p>{endSeasonTimeLeft.minutes}</p>
-      <p>{endSeasonTimeLeft.seconds}</p>
-      <p>Jours</p>
-      <p>Heures</p>
-      <p>Minutes</p>
-      <p>Secondes</p>
+    <article className={styles.CountdownArticle}>
+      <p className={styles.CountdownP}>Fin de la saison</p>
+      <p className={styles.CountdownPTime}>{endSeasonTimeLeft.days}</p>
+      <p className={styles.CountdownPTime}>{endSeasonTimeLeft.hours}</p>
+      <p className={styles.CountdownPTime}>{endSeasonTimeLeft.minutes}</p>
+      <p className={styles.CountdownPTime}>{endSeasonTimeLeft.seconds}</p>
+      <p className={styles.CountdownP}>Jours</p>
+      <p className={styles.CountdownP}>Heures</p>
+      <p className={styles.CountdownP}>Minutes</p>
+      <p className={styles.CountdownP}>Secondes</p>
     </article>
   );
 }

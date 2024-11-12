@@ -1,5 +1,6 @@
 // Race Countdown
 import { useEffect, useState } from "react";
+import styles from "../Countdown.module.css";
 
 type Date = {
   MRData: {
@@ -48,16 +49,16 @@ export default function RaceCountdown() {
   });
 
   return (
-    <article>
-      <p>Prochaine course</p>
-      <p>{raceTimeLeft.days}</p>
-      <p>{raceTimeLeft.hours}</p>
-      <p>{raceTimeLeft.minutes}</p>
-      <p>{raceTimeLeft.seconds}</p>
-      <p>Jours</p>
-      <p>Heures</p>
-      <p>Minutes</p>
-      <p>Secondes</p>
+    <article className={styles.CountdownArticle}>
+      <p className={styles.CountdownP}>Prochaine course</p>
+      <p className={styles.CountdownPTime}>{raceTimeLeft.days}</p>
+      <p className={styles.CountdownPTime}>{raceTimeLeft.hours}</p>
+      <p className={styles.CountdownPTime}>{raceTimeLeft.minutes}</p>
+      <p className={styles.CountdownPTime}>{raceTimeLeft.seconds}</p>
+      <p className={styles.CountdownP}>Jours</p>
+      <p className={styles.CountdownP}>Heures</p>
+      <p className={styles.CountdownP}>Minutes</p>
+      <p className={styles.CountdownP}>Secondes</p>
     </article>
   );
 }
