@@ -30,7 +30,7 @@ export default function PiloteRanking() {
   }, []);
 
   return (
-    <section className={styles.RankingSection}>
+    <section className={styles.rankingSection}>
       <h2>Classement Pilote</h2>
       {rank.map((driver: Driver) => (
         <DriversDisplay

@@ -27,7 +27,7 @@ export default function TeamRanking() {
   }, []);
 
   return (
-    <section className={styles.RankingSection}>
+    <section className={styles.rankingSection}>
       <h2>Classement Écuries</h2>
       {rank.map((team: Team) => (
         <TeamsDisplay

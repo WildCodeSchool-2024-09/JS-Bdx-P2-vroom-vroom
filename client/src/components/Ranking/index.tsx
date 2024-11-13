@@ -5,7 +5,7 @@ import TeamRanking from "./TeamRanking";
 
 export default function Ranking() {
   return (
-    <section className={styles.RankingGlobalSection}>
+    <section className={styles.rankingGlobalSection}>
       <PiloteRanking />
       <TeamRanking />
     </section>

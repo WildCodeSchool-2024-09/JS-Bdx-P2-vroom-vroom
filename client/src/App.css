@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-  color: var(--PrincipalColor);
+  color: var(--principalColor);
   font-family: var(--titlePolice);
   text-transform: uppercase;
   text-align: center;

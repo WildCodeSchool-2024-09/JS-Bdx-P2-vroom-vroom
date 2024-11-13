@@ -22,13 +22,13 @@ export default function DriversDisplay({
   Constructors,
 }: Driver) {
   return (
-    <article className={styles.RankingArticle}>
-      <p className={styles.RankingPos}>{position}</p>
-      <p className={styles.RankingName}>
+    <article className={styles.rankingArticle}>
+      <p className={styles.rankingPos}>{position}</p>
+      <p className={styles.rankingName}>
         {Driver.givenName} {Driver.familyName}
       </p>
-      <p className={styles.RankingConstructor}>{Constructors[0].name}</p>
-      <p className={styles.RankingPoints}>{points}</p>
+      <p className={styles.rankingConstructor}>{Constructors[0].name}</p>
+      <p className={styles.rankingPoints}>{points}</p>
     </article>
   );
 }

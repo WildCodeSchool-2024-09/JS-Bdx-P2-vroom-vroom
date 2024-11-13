@@ -12,10 +12,10 @@ type Team = {
 
 export default function TeamsDisplay({ position, points, Constructor }: Team) {
   return (
-    <article className={styles.RankingArticle}>
-      <p className={styles.RankingPos}>{position}</p>
-      <p className={styles.RankingName}>{Constructor.name}</p>
-      <p className={styles.RankingPoints}>{points}</p>
+    <article className={styles.rankingArticle}>
+      <p className={styles.rankingPos}>{position}</p>
+      <p className={styles.rankingName}>{Constructor.name}</p>
+      <p className={styles.rankingPoints}>{points}</p>
     </article>
   );
 }
