@@ -11,7 +11,7 @@ type Date = {
 };
 
 export default function RaceCountdown() {
-  const [date, setDate] = useState(null as Date | null);
+  const [date, setDate] = useState<Date | null>(null);
   const [raceTimeLeft, setRaceTimeLeft] = useState({
     days: 0,
     hours: 0,
