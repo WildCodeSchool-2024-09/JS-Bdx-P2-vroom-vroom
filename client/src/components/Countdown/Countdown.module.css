@@ -1,11 +1,11 @@
 @import url("../../variables.css");
 
-.CountdownTitle {
+.countdownTitle {
   display: none;
   columns: span 2;
 }
 
-.CountdownSection {
+.countdownSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,11 +16,11 @@
   background-image: url("../../assets/images/countdown_bg.avif");
   background-size: cover;
   background-position: center 75%;
-  border-bottom: 5px solid var(--PrincipalColor);
-  border-top: 5px solid var(--PrincipalColor);
+  border-bottom: 5px solid var(--principalColor);
+  border-top: 5px solid var(--principalColor);
 }
 
-.CountdownArticle {
+.countdownArticle {
   background-color: var(--dark);
   border-radius: 11px;
   margin: var(--spacing) 0;
@@ -33,20 +33,20 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-.CountdownP {
+.countdownText {
   font-size: var(--spacingXS);
 }
 
-.CountdownP:first-child {
+.countdownText:first-child {
   grid-area: 1 / 1 / 2 / 5;
 }
 
-.CountdownPTime {
+.countdownTimeLeft {
   font-size: var(--spacingM);
 }
 
 @media screen and (min-width: 481px) {
-  .CountdownSection {
+  .countdownSection {
     flex-direction: row;
     gap: var(--spacingXXS);
     justify-content: space-around;

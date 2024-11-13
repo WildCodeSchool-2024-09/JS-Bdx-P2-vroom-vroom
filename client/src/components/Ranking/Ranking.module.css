@@ -1,19 +1,19 @@
 @import url(../../variables.css);
 
-.RankingGlobalSection {
+.rankingGlobalSection {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.RankingSection {
+.rankingSection {
   border-radius: 11px;
   background-color: #3d3f43;
   width: clamp(18rem, 75vw, 35rem);
   margin: var(--spacing) auto;
 }
 
-.RankingArticle {
+.rankingArticle {
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(to right, transparent, var(--dark), transparent)
     1;
@@ -23,33 +23,33 @@
   padding: var(--spacingM) 0;
 }
 
-.RankingPos {
+.rankingPos {
   grid-area: 1 / 1 / 3 / 2;
   font-size: 1.5rem;
 }
 
-.RankingName {
+.rankingName {
   grid-area: 1 / 2 / 2 / 3;
   font-size: 1.25rem;
 }
 
-.RankingConstructor {
+.rankingConstructor {
   grid-area: 2 / 2 / 3 / 3;
   color: #babbbc;
   font-size: 1rem;
 }
 
-.RankingPoints {
+.rankingPoints {
   grid-area: 1 / 3 / 3 / 4;
 }
 
 @media screen and (min-width: 481px) {
-  .RankingGlobalSection {
+  .rankingGlobalSection {
     flex-direction: row;
     gap: var(--spacingXXS);
   }
 
-  .RankingP {
+  .rankingText {
     font-size: var(--spacing);
     padding: var(--spacing) 0;
   }

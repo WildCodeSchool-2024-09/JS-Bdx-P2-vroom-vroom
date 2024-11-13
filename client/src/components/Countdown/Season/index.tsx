@@ -11,7 +11,7 @@ type Date = {
 };
 
 export default function SeasonCountdown() {
-  const [date, setDate] = useState(null as Date | null);
+  const [date, setDate] = useState<Date | null>(null);
   const [endSeasonTimeLeft, setEndSeasonTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -49,16 +49,16 @@ export default function SeasonCountdown() {
   });
 
   return (
-    <article className={styles.CountdownArticle}>
-      <p className={styles.CountdownP}>Fin de la saison</p>
-      <p className={styles.CountdownPTime}>{endSeasonTimeLeft.days}</p>
-      <p className={styles.CountdownPTime}>{endSeasonTimeLeft.hours}</p>
-      <p className={styles.CountdownPTime}>{endSeasonTimeLeft.minutes}</p>
-      <p className={styles.CountdownPTime}>{endSeasonTimeLeft.seconds}</p>
-      <p className={styles.CountdownP}>Jours</p>
-      <p className={styles.CountdownP}>Heures</p>
-      <p className={styles.CountdownP}>Minutes</p>
-      <p className={styles.CountdownP}>Secondes</p>
+    <article className={styles.countdownArticle}>
+      <p className={styles.countdownText}>Fin de la saison</p>
+      <p className={styles.countdownTimeLeft}>{endSeasonTimeLeft.days}</p>
+      <p className={styles.countdownTimeLeft}>{endSeasonTimeLeft.hours}</p>
+      <p className={styles.countdownTimeLeft}>{endSeasonTimeLeft.minutes}</p>
+      <p className={styles.countdownTimeLeft}>{endSeasonTimeLeft.seconds}</p>
+      <p className={styles.countdownText}>Jours</p>
+      <p className={styles.countdownText}>Heures</p>
+      <p className={styles.countdownText}>Minutes</p>
+      <p className={styles.countdownText}>Secondes</p>
     </article>
   );
 }

@@ -49,16 +49,16 @@ export default function RaceCountdown() {
   });
 
   return (
-    <article className={styles.CountdownArticle}>
-      <p className={styles.CountdownP}>Prochaine course</p>
-      <p className={styles.CountdownPTime}>{raceTimeLeft.days}</p>
-      <p className={styles.CountdownPTime}>{raceTimeLeft.hours}</p>
-      <p className={styles.CountdownPTime}>{raceTimeLeft.minutes}</p>
-      <p className={styles.CountdownPTime}>{raceTimeLeft.seconds}</p>
-      <p className={styles.CountdownP}>Jours</p>
-      <p className={styles.CountdownP}>Heures</p>
-      <p className={styles.CountdownP}>Minutes</p>
-      <p className={styles.CountdownP}>Secondes</p>
+    <article className={styles.countdownArticle}>
+      <p className={styles.countdownText}>Prochaine course</p>
+      <p className={styles.countdownTimeLeft}>{raceTimeLeft.days}</p>
+      <p className={styles.countdownTimeLeft}>{raceTimeLeft.hours}</p>
+      <p className={styles.countdownTimeLeft}>{raceTimeLeft.minutes}</p>
+      <p className={styles.countdownTimeLeft}>{raceTimeLeft.seconds}</p>
+      <p className={styles.countdownText}>Jours</p>
+      <p className={styles.countdownText}>Heures</p>
+      <p className={styles.countdownText}>Minutes</p>
+      <p className={styles.countdownText}>Secondes</p>
     </article>
   );
 }
