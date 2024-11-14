@@ -1,12 +1,10 @@
-import "./App.css";
-import HomePage from "./components/HomePage";
+import DriversFormula from "./components/drivers/DriversFormula";
 
 function App() {
   return (
     <>
-      <HomePage />
+      <DriversFormula />
     </>
   );
 }
-
 export default App;
