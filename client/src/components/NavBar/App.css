@@ -1,0 +1,38 @@
+* {
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text-font: "Atkinson Hyperlegible", sans-serif;
+  --titlePolice: "Racing Sans One", sans-serif;
+  --background: #2e3035;
+  --principal-font: #fbfcfa;
+  --title-color: #ff1801;
+}
+header {
+  background-color: var(--background);
+}
+
+.Logo {
+  height: 50px;
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+}
+a {
+  color: #fbfcfa;
+  text-decoration: none;
+}
+
+.NavBar ul {
+  font-family: var(--text-font);
+  color: var(--principal-font);
+  margin: 7rem;
+  padding-bottom: 2rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
