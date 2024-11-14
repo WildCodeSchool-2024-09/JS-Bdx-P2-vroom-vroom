@@ -3,11 +3,8 @@ import { useEffect, useState } from "react";
 import styles from "../Countdown.module.css";
 
 type Date = {
-  MRData: {
-    RaceTable: {
-      Races: { date: string; time: string }[];
-    };
-  };
+  date: string;
+  time: string;
 };
 
 export default function SeasonCountdown() {
@@ -22,13 +19,11 @@ export default function SeasonCountdown() {
   useEffect(() => {
     fetch("https://ergast.com/api/f1/current/24.json")
       .then((response) => response.json())
-      .then((data) => setDate(data))
+      .then((data) => setDate(data.MRData.RaceTable.Races[0]))
       .catch((err) => console.error(err));
   }, []);
 
-  const endSeasonDate = new Date(
-    `${date?.MRData.RaceTable.Races[0].date}T${date?.MRData.RaceTable.Races[0].time}`,
-  );
+  const endSeasonDate = new Date(`${date?.date}T${date?.time}`);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,7 +41,7 @@ export default function SeasonCountdown() {
     }, 1000);
 
     return () => clearInterval(interval);
-  });
+  }, [endSeasonDate]);
 
   return (
     <article className={styles.countdownArticle}>

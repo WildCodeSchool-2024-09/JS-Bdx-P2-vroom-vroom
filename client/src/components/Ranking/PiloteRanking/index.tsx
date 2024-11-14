@@ -15,6 +15,7 @@ type Driver = {
     givenName: string;
     wins: string;
   };
+  isLast: boolean;
 };
 
 export default function PiloteRanking() {
@@ -32,15 +33,27 @@ export default function PiloteRanking() {
   return (
     <section className={styles.rankingSection}>
       <h2>Classement Pilote</h2>
-      {rank.map((driver: Driver) => (
-        <DriversDisplay
-          key={driver.Driver.driverId}
-          Driver={driver.Driver}
-          position={driver.position}
-          Constructors={driver.Constructors}
-          points={driver.points}
-        />
-      ))}
+      <table className={styles.table}>
+        <thead className={styles.tableHeader}>
+          <tr>
+            <th>Position</th>
+            <th>Nom / Ecuries</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rank.map((driver: Driver, index) => (
+            <DriversDisplay
+              key={driver.Driver.driverId}
+              Driver={driver.Driver}
+              position={driver.position}
+              Constructors={driver.Constructors}
+              points={driver.points}
+              isLast={index === rank.length - 1}
+            />
+          ))}
+        </tbody>
+      </table>
     </section>
   );
 }

@@ -21,7 +21,7 @@ h2 {
   color: var(--light);
   font-family: var(--titlePolice);
   text-align: center;
-  padding: var(--spacing) 0;
+  padding-top: var(--spacingXS);
 }
 
 p {

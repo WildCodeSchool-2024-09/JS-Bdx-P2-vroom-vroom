@@ -13,6 +13,7 @@ type Driver = {
     givenName: string;
     wins: string;
   };
+  isLast: boolean;
 };
 
 export default function DriversDisplay({
@@ -20,15 +21,30 @@ export default function DriversDisplay({
   position,
   Driver,
   Constructors,
+  isLast,
 }: Driver) {
   return (
-    <article className={styles.rankingArticle}>
-      <p className={styles.rankingPos}>{position}</p>
-      <p className={styles.rankingName}>
-        {Driver.givenName} {Driver.familyName}
-      </p>
-      <p className={styles.rankingConstructor}>{Constructors[0].name}</p>
-      <p className={styles.rankingPoints}>{points}</p>
-    </article>
+    <>
+      <tr>
+        <td rowSpan={2} className={styles.tableMainInfo}>
+          {position}
+        </td>
+        <td className={styles.tableMainInfo}>
+          {Driver.givenName} {Driver.familyName}
+        </td>
+        <td rowSpan={2}>{points}</td>
+      </tr>
+      <tr>
+        <td
+          className={
+            isLast
+              ? `${styles.tableSecondaryInfo} ${styles.tableLastRow}`
+              : `${styles.tableSecondaryInfo} ${styles.tableRow}`
+          }
+        >
+          {Constructors[0].name}
+        </td>
+      </tr>
+    </>
   );
 }

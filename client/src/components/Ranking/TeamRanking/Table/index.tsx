@@ -8,14 +8,28 @@ type Team = {
     constructorId: string;
     name: string;
   };
+  isLast: boolean;
 };
 
-export default function TeamsDisplay({ position, points, Constructor }: Team) {
+export default function TeamsDisplay({
+  position,
+  points,
+  Constructor,
+  isLast,
+}: Team) {
   return (
-    <article className={styles.rankingArticle}>
-      <p className={styles.rankingPos}>{position}</p>
-      <p className={styles.rankingName}>{Constructor.name}</p>
-      <p className={styles.rankingPoints}>{points}</p>
-    </article>
+    <tr>
+      <td className={styles.tableMainInfo}>{position}</td>
+      <td
+        className={
+          isLast
+            ? `${styles.tableMainInfo} ${styles.tableLastRow}`
+            : `${styles.tableMainInfo} ${styles.tableRow}`
+        }
+      >
+        {Constructor.name}
+      </td>
+      <td>{points}</td>
+    </tr>
   );
 }

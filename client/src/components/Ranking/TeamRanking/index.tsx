@@ -29,14 +29,26 @@ export default function TeamRanking() {
   return (
     <section className={styles.rankingSection}>
       <h2>Classement Écuries</h2>
-      {rank.map((team: Team) => (
-        <TeamsDisplay
-          key={team.Constructor.constructorId}
-          position={team.position}
-          Constructor={team.Constructor}
-          points={team.points}
-        />
-      ))}
+      <table className={styles.table}>
+        <thead className={styles.tableHeader}>
+          <tr>
+            <th>Position</th>
+            <th>Nom</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rank.map((team: Team, index) => (
+            <TeamsDisplay
+              key={team.Constructor.constructorId}
+              position={team.position}
+              Constructor={team.Constructor}
+              points={team.points}
+              isLast={index === rank.length - 1}
+            />
+          ))}
+        </tbody>
+      </table>
     </section>
   );
 }
