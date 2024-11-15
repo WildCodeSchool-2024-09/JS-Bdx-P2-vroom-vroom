@@ -2,7 +2,6 @@
 
 .countdownTitle {
   display: none;
-  columns: span 2;
 }
 
 .countdownSection {
@@ -22,7 +21,7 @@
 
 .countdownArticle {
   background-color: var(--dark);
-  border-radius: 11px;
+  border-radius: var(--radius);
   margin: var(--spacing) 0;
   padding: 0 var(--spacingXXS);
 
