@@ -1,29 +1,27 @@
+@import url(./variables.css);
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: var(--dark);
-}
-
-:root {
-  --light: #fbfcfa;
-  --dark: #2e3035;
-  --PrincipalColor: #ff1801;
-  --textLight: #dcdee1;
-
-  --textPolice: "Atkinson Hyperlegible", sans-serif;
-  --titlePolice: "Racing Sans One", sans-serif;
 }
 
 body {
-  padding: 2rem;
+  background-color: var(--dark);
 }
 
 h1 {
-  color: var(--PrincipalColor);
+  color: var(--principalColor);
   font-family: var(--titlePolice);
   text-transform: uppercase;
   text-align: center;
+}
+
+h2 {
+  color: var(--light);
+  font-family: var(--titlePolice);
+  text-align: center;
+  padding-top: var(--spacingXS);
 }
 
 p {
