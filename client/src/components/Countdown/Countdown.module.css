@@ -1,0 +1,54 @@
+@import url("../../variables.css");
+
+.countdownTitle {
+  display: none;
+  columns: span 2;
+}
+
+.countdownSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 15rem;
+
+  background-image: url("../../assets/images/countdown_bg.avif");
+  background-size: cover;
+  background-position: center 75%;
+  border-bottom: 5px solid var(--principalColor);
+  border-top: 5px solid var(--principalColor);
+}
+
+.countdownArticle {
+  background-color: var(--dark);
+  border-radius: 11px;
+  margin: var(--spacing) 0;
+  padding: 0 var(--spacingXXS);
+
+  width: 15rem;
+  height: 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.countdownText {
+  font-size: var(--spacingXS);
+}
+
+.countdownText:first-child {
+  grid-area: 1 / 1 / 2 / 5;
+}
+
+.countdownTimeLeft {
+  font-size: var(--spacingM);
+}
+
+@media screen and (min-width: 481px) {
+  .countdownSection {
+    flex-direction: row;
+    gap: var(--spacingXXS);
+    justify-content: space-around;
+  }
+}

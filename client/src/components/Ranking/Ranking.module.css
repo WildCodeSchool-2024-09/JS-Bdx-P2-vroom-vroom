@@ -1,0 +1,54 @@
+@import url(../../variables.css);
+
+.rankingGlobalSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rankingSection {
+  border-radius: 11px;
+  background-color: var(--grey);
+  width: clamp(18rem, 75vw, 35rem);
+  margin: var(--spacing) auto;
+}
+
+.table {
+  font-family: var(--textPolice);
+  color: var(--light);
+  text-align: center;
+  width: clamp(18rem, 75vw, 35rem);
+}
+
+.tableHeader {
+  visibility: hidden;
+}
+
+.tableRow {
+  border-bottom: .1rem solid transparent;
+  border-image: linear-gradient(to right, transparent, var(--dark), transparent)
+    1;
+  height: var(--spacing);
+}
+
+.tableLastRow {
+  border-bottom: none;
+}
+
+.tableMainInfo {
+  font-size: 1.25rem;
+  padding: var(--spacingXXS);
+}
+
+.tableSecondaryInfo {
+  font-size: var(--spacing);
+  color: var(--lightGrey);
+  padding-bottom: var(--spacingXXS);
+}
+
+@media screen and (min-width: 481px) {
+  .rankingGlobalSection {
+    flex-direction: row;
+    gap: var(--spacingXXS);
+  }
+}
