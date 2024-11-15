@@ -1,24 +1,23 @@
 body {
-  background-color: #2E3035;
-  color: #FBFCFA;
-  font-family: 'Atkinson Hyperlegible', sans-serif;
+  background-color: #2e3035;
+  color: #fbfcfa;
+  font-family: "Atkinson Hyperlegible", sans-serif;
   margin: 0;
   padding: 20px;
 }
 
 .title {
-  color: #FF1801; 
+  color: #ff1801;
   text-align: center;
-  font-family: 'Racing Sans One', sans-serif;
+  font-family: "Racing Sans One", sans-serif;
   font-size: 2.5rem;
   margin-top: 20px;
 }
 
-
 .circuit-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-  grid-template-rows: repeat(6, auto);   /* 6 lignes */
+  grid-template-rows: repeat(6, auto); /* 6 lignes */
   gap: 20px;
   max-width: 1200px;
   margin: 40px auto; /* Centrer la grille */
@@ -28,7 +27,7 @@ body {
 
 /* Carte d'un circuit */
 .circuit-item {
-  background-color: #3C3F44;
+  background-color: #3c3f44;
   padding: 15px;
   border-radius: 8px;
   text-align: center;
@@ -42,15 +41,10 @@ body {
 .circuit-item h3 {
   margin: 0;
   font-size: 1.5rem;
-  color: #FF1801; /* Rouge F1 */
+  color: #ff1801;
 }
 
 .circuit-item p {
   margin: 5px 0 0;
   font-size: 1rem;
 }
-
-
-
-  
-  

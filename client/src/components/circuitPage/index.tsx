@@ -1,6 +1,6 @@
-import { useEffect, useState, useCallback } from 'react';
-import type { Circuit } from './types';
-import './styles.css';
+import { useCallback, useEffect, useState } from "react";
+import type { Circuit } from "./types";
+import "./styles.css";
 
 const CircuitPage = () => {
   const [circuits, setCircuits] = useState<Circuit[]>([]);
@@ -10,7 +10,9 @@ const CircuitPage = () => {
   const fetchCircuits = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://corsproxy.io/?https://ergast.com/api/f1/2024/circuits.json');
+      const response = await fetch(
+        "https://corsproxy.io/?https://ergast.com/api/f1/2024/circuits.json",
+      );
       if (!response.ok) {
         throw new Error(`Erreur HTTP : ${response.status}`);
       }
@@ -18,7 +20,7 @@ const CircuitPage = () => {
       const circuitsData = data.MRData.CircuitTable.Circuits;
       setCircuits(circuitsData);
     } catch (error) {
-      setError('Impossible de récupérer les données.');
+      setError("Impossible de récupérer les données.");
     } finally {
       setLoading(false);
     }
@@ -38,7 +40,9 @@ const CircuitPage = () => {
         {circuits.map((circuit) => (
           <li key={circuit.circuitId} className="circuit-item">
             <h3>{circuit.circuitName}</h3>
-            <p>{circuit.Location.locality}, {circuit.Location.country}</p>
+            <p>
+              {circuit.Location.locality}, {circuit.Location.country}
+            </p>
           </li>
         ))}
       </ul>
@@ -47,9 +51,3 @@ const CircuitPage = () => {
 };
 
 export default CircuitPage;
-
-
-
-
-
-
