@@ -1,9 +1,8 @@
 // Team Ranking
 import { useEffect, useState } from "react";
-import styles from "../Ranking.module.css";
-import TeamsDisplay from "./Table";
+import TableRanking from "../../../services/TableRanking";
 
-type Team = {
+export type TeamProps = {
   position: string;
   points: string;
   Constructor: {
@@ -13,7 +12,7 @@ type Team = {
 };
 
 export default function TeamRanking() {
-  const [rank, setRank] = useState<Team[]>([]);
+  const [rank, setRank] = useState<TeamProps[]>([]);
 
   useEffect(() => {
     fetch("https://ergast.com/api/f1/2024/constructorStandings.json")
@@ -27,28 +26,12 @@ export default function TeamRanking() {
   }, []);
 
   return (
-    <section className={styles.rankingSection}>
-      <h2>Classement Constructeurs</h2>
-      <table className={styles.table}>
-        <thead className={styles.tableHeader}>
-          <tr>
-            <th>Position</th>
-            <th>Nom</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rank.map((team: Team, index) => (
-            <TeamsDisplay
-              key={team.Constructor.constructorId}
-              position={team.position}
-              Constructor={team.Constructor}
-              points={team.points}
-              isLast={index === rank.length - 1}
-            />
-          ))}
-        </tbody>
-      </table>
-    </section>
+    <TableRanking
+      titleRanking="Classement Constructeurs"
+      firstCol="Position"
+      secondCol="Nom"
+      thirdCol="Points"
+      rows={rank}
+    />
   );
 }
