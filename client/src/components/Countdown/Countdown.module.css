@@ -41,7 +41,17 @@
 }
 
 .countdownTimeLeft {
+  font-family: var(--textPolice);
   font-size: var(--spacingM);
+  color: var(--light);
+
+  grid-area: 2 / 1 / 3 / 5;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, .5fr);
+  align-items: center;
+  justify-items: center;
 }
 
 @media screen and (min-width: 481px) {

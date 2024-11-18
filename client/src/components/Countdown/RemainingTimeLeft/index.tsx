@@ -39,10 +39,12 @@ export default function RemainingTimeLeft({
   return (
     <article className={styles.countdownArticle}>
       <p className={styles.countdownText}>{titleCountdown}</p>
-      <p className={styles.countdownTimeLeft}>{timeLeft.days}</p>
-      <p className={styles.countdownTimeLeft}>{timeLeft.hours}</p>
-      <p className={styles.countdownTimeLeft}>{timeLeft.minutes}</p>
-      <p className={styles.countdownTimeLeft}>{timeLeft.seconds}</p>
+      <time className={styles.countdownTimeLeft} dateTime="ww dd hh mm ss">
+        <span>{timeLeft.days}</span>
+        <span>{timeLeft.hours}</span>
+        <span>{timeLeft.minutes}</span>
+        <span>{timeLeft.seconds}</span>
+      </time>
       <p className={styles.countdownText}>Jours</p>
       <p className={styles.countdownText}>Heures</p>
       <p className={styles.countdownText}>Minutes</p>
