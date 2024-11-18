@@ -32,7 +32,7 @@ export default function PiloteRanking() {
 
   return (
     <section className={styles.rankingSection}>
-      <h2>Classement Pilote</h2>
+      <h2>Classement Pilotes</h2>
       <table className={styles.table}>
         <thead className={styles.tableHeader}>
           <tr>

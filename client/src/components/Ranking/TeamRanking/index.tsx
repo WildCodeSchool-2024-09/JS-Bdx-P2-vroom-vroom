@@ -28,7 +28,7 @@ export default function TeamRanking() {
 
   return (
     <section className={styles.rankingSection}>
-      <h2>Classement Écuries</h2>
+      <h2>Classement Constructeurs</h2>
       <table className={styles.table}>
         <thead className={styles.tableHeader}>
           <tr>
