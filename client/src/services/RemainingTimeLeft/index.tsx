@@ -1,6 +1,6 @@
 // Remaining Time Left
 import { useEffect, useState } from "react";
-import styles from "../Countdown.module.css";
+import styles from "../../components/Countdown/Countdown.module.css";
 
 type TimeLeft = {
   finalDate: Date;

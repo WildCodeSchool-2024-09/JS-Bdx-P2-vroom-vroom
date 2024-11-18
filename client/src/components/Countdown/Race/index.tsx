@@ -1,6 +1,6 @@
 // Race Countdown
 import { useEffect, useState } from "react";
-import RemainingTimeLeft from "../RemainingTimeLeft";
+import RemainingTimeLeft from "../../../services/RemainingTimeLeft";
 
 type Date = {
   date: string;
