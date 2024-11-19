@@ -14,7 +14,7 @@ body {
 
 .circuit-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing);
   max-width: 1200px;
   margin: var(--spacingM) auto;
@@ -49,15 +49,14 @@ body {
   font-family: var(--textPolice);
 }
 
-
 @media (max-width: 768px) {
   .circuit-grid {
-    grid-template-columns: repeat(2, 1fr); 
-    gap: var(--spacingM); 
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacingM);
   }
 
   .title {
-    font-size: 2rem; 
+    font-size: 2rem;
   }
 
   .circuit-item {
@@ -65,7 +64,7 @@ body {
   }
 
   .circuit-item h3 {
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
   }
 
   .circuit-item p {
@@ -73,24 +72,23 @@ body {
   }
 }
 
-
 @media (max-width: 480px) {
   .circuit-grid {
-    grid-template-columns: 1fr; 
-    gap: var(--spacing); 
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
   }
 
   .title {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     margin-top: var(--spacing);
   }
 
   .circuit-item {
-    padding: var(--spacingXS); 
+    padding: var(--spacingXS);
   }
 
   .circuit-item h3 {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 
   .circuit-item p {
