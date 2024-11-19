@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import styles from "./CircuitPage.module.css";
 import type { Circuit } from "./types";
-import "./styles.css";
 
 const CircuitPage = () => {
   const [circuits, setCircuits] = useState<Circuit[]>([]);
@@ -35,10 +35,10 @@ const CircuitPage = () => {
 
   return (
     <>
-      <h1 className="title">Circuits F1 - Saison 2024</h1>
-      <ul className="circuit-grid">
+      <h1 className={styles.title}>Circuits F1 - Saison 2024</h1>
+      <ul className={styles["circuit-grid"]}>
         {circuits.map((circuit) => (
-          <li key={circuit.circuitId} className="circuit-item">
+          <li key={circuit.circuitId} className={styles["circuit-item"]}>
             <h3>{circuit.circuitName}</h3>
             <p>
               {circuit.Location.locality}, {circuit.Location.country}

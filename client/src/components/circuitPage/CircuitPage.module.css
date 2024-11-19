@@ -1,0 +1,50 @@
+@import url("../../variables.css");
+
+body {
+  background-color: var(--dark) !important;
+}
+
+.title {
+  color: var(--principalColor);
+  text-align: center;
+  font-family: var(--titlePolice);
+  font-size: 2.5rem;
+  margin-top: var(--spacingM);
+}
+
+.circuit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing);
+  max-width: 1200px;
+  margin: var(--spacingM) auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.circuit-item {
+  background-color: var(--grey) !important;
+  padding: var(--spacingXS);
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s;
+  color: var(--textLight);
+}
+
+.circuit-item:hover {
+  transform: translateY(-5px);
+}
+
+.circuit-item h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--principalColor);
+  font-family: var(--titlePolice);
+}
+
+.circuit-item p {
+  margin: var(--spacingXXS) 0 0;
+  font-size: 1rem;
+  color: var(--lightGrey);
+  font-family: var(--textPolice);
+}
