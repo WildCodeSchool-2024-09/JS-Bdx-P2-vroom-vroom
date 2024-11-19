@@ -14,7 +14,7 @@ body {
 
 .circuit-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); 
   gap: var(--spacing);
   max-width: 1200px;
   margin: var(--spacingM) auto;
@@ -38,8 +38,8 @@ body {
 .circuit-item h3 {
   margin: 0;
   font-size: 1.5rem;
-  color: var(--principalColor);
-  font-family: var(--titlePolice);
+  color: var(--textLight);
+  font-family: var(--textPolice);
 }
 
 .circuit-item p {
@@ -47,4 +47,53 @@ body {
   font-size: 1rem;
   color: var(--lightGrey);
   font-family: var(--textPolice);
+}
+
+
+@media (max-width: 768px) {
+  .circuit-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: var(--spacingM); 
+  }
+
+  .title {
+    font-size: 2rem; 
+  }
+
+  .circuit-item {
+    padding: var(--spacing);
+  }
+
+  .circuit-item h3 {
+    font-size: 1.25rem; 
+  }
+
+  .circuit-item p {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .circuit-grid {
+    grid-template-columns: 1fr; 
+    gap: var(--spacing); 
+  }
+
+  .title {
+    font-size: 1.5rem; 
+    margin-top: var(--spacing);
+  }
+
+  .circuit-item {
+    padding: var(--spacingXS); 
+  }
+
+  .circuit-item h3 {
+    font-size: 1rem; 
+  }
+
+  .circuit-item p {
+    font-size: 0.8rem;
+  }
 }
