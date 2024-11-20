@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./style.css";
+import "./driversmodule.css";
 
 interface Driver {
   driverId: string;
@@ -16,10 +16,12 @@ enum Nationalities {
   Spanish = "Espagnol",
   British = "Britannique",
   Finnish = "Finlandais",
+  "Argentinian " = "Argentin",
   French = "Français",
   Mexican = "Mexicain",
   Australian = "Australien",
   German = "Allemand",
+  "New Zealander" = "Néo-Zélandais",
   Monegasque = "Monégasque",
   Danish = "Danois",
   American = "Américain",
@@ -28,6 +30,10 @@ enum Nationalities {
   Dutch = "Néerlandais",
   Chinese = "Chinois",
 }
+
+const wikipediaToFrench = (url: string): string => {
+  return url.replace("en.wikipedia.org", "fr.wikipedia.org");
+};
 
 function calculateAge(dateOfBirth: string): number {
   const birthDate = new Date(dateOfBirth);
@@ -54,7 +60,7 @@ function App() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
 
   useEffect(() => {
-    fetch("https://ergast.com/api/f1/2024/2/drivers.json")
+    fetch("https://ergast.com/api/f1/2024/drivers.json")
       .then((response) => response.json())
       .then((data) => {
         setDrivers(data.MRData.DriverTable.Drivers);
@@ -66,7 +72,7 @@ function App() {
 
   return (
     <>
-      <h1>Liste des Pilotes F1</h1>
+      <h1 className="driver-title">Liste des Pilotes F1</h1>
       <ul className="drivers">
         {drivers.map((driver) => {
           const imageUrl = `/images/${driver.driverId}.jpg`;
@@ -75,6 +81,7 @@ function App() {
             driver.nationality;
           const age = calculateAge(driver.dateOfBirth);
           const formattedBirthday = formatDateToFrench(driver.dateOfBirth);
+          const frenchWikipediaUrl = wikipediaToFrench(driver.url);
 
           return (
             <li key={driver.driverId} className="driver-card">
@@ -82,24 +89,24 @@ function App() {
                 src={imageUrl}
                 alt={`${driver.givenName} ${driver.familyName}`}
               />
-              <p>
+              <p className="driver-description">
                 {driver.givenName} {driver.familyName}
               </p>
-              <p id="nation">{nationalityInFrench}</p>
+              <p className="nation">{nationalityInFrench}</p>
               <article className="driver-info">
                 <p>N°{driver.permanentNumber}</p>
                 <p>{age}ans</p>
                 <p>{formattedBirthday}</p>
                 <p>
                   <a
-                    href={driver.url}
+                    href={frenchWikipediaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <img
                       src="/images/Wikipedia-Logo.png"
                       alt="Wikipédia"
-                      style={{ width: "30px", height: "30px" }}
+                      style={{ width: "40px", height: "40px" }}
                     />
                   </a>
                 </p>
