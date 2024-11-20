@@ -1,4 +1,4 @@
-import CircuitPage from "./components/circuitPage";
+import CircuitPage from "./pages/circuitPage/CircuitPage";
 
 const App = () => {
   return (

@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
-import styles from "./CircuitPage.module.css";
-import type { Circuit } from "./types";
+import styles from "./CircuitList.module.css";
+import type { Circuit } from "../../pages/circuitPage/types";
 
-const CircuitPage = () => {
+export default function CircuitList() {
   const [circuits, setCircuits] = useState<Circuit[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -11,7 +11,7 @@ const CircuitPage = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://corsproxy.io/?https://ergast.com/api/f1/2024/circuits.json",
+        "https://corsproxy.io/?https://ergast.com/api/f1/2024/circuits.json"
       );
       if (!response.ok) {
         throw new Error(`Erreur HTTP : ${response.status}`);
@@ -34,7 +34,7 @@ const CircuitPage = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <>
+    <div>
       <h1 className={styles.title}>Circuits F1 - Saison 2024</h1>
       <ul className={styles["circuit-grid"]}>
         {circuits.map((circuit) => (
@@ -46,8 +46,6 @@ const CircuitPage = () => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
-};
-
-export default CircuitPage;
+}
