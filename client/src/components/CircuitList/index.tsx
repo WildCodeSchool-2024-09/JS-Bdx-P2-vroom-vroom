@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import styles from "./CircuitList.module.css";
 import type { Circuit } from "../../pages/circuitPage/types";
+import styles from "./CircuitList.module.css";
 
 export default function CircuitList() {
   const [circuits, setCircuits] = useState<Circuit[]>([]);
@@ -11,7 +11,7 @@ export default function CircuitList() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://corsproxy.io/?https://ergast.com/api/f1/2024/circuits.json"
+        "https://corsproxy.io/?https://ergast.com/api/f1/2024/circuits.json",
       );
       if (!response.ok) {
         throw new Error(`Erreur HTTP : ${response.status}`);
