@@ -35,10 +35,10 @@ body {
 }
 
 .drivers {
-   display: grid;
-   grid-template-rows: repeat(3, 1fr);
-   grid-template-columns: repeat(3, 1fr);
-   gap: var(--spacingM);
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacingM);
 }
 
 .driver-card {
@@ -99,11 +99,11 @@ body {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
   }
-}    
+}
 
 @media (min-width: 800px) {
   .drivers {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
   }
-}   
+}
