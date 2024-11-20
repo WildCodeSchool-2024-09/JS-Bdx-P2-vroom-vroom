@@ -12,7 +12,7 @@ body {
   margin-top: var(--spacingM);
 }
 
-.circuit-grid {
+.circuitGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing);
@@ -22,7 +22,7 @@ body {
   list-style-type: none;
 }
 
-.circuit-item {
+.circuitItem {
   background-color: var(--grey) !important;
   padding: var(--spacingXS);
   border-radius: 8px;
@@ -31,18 +31,18 @@ body {
   color: var(--textLight);
 }
 
-.circuit-item:hover {
+.circuitItem:hover {
   transform: translateY(-5px);
 }
 
-.circuit-item h3 {
+.circuitItem h3 {
   margin: 0;
   font-size: 1.5rem;
   color: var(--textLight);
   font-family: var(--textPolice);
 }
 
-.circuit-item p {
+.circuitItem p {
   margin: var(--spacingXXS) 0 0;
   font-size: 1rem;
   color: var(--lightGrey);
@@ -50,7 +50,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .circuit-grid {
+  .circuitGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacingM);
   }
@@ -59,21 +59,21 @@ body {
     font-size: 2rem;
   }
 
-  .circuit-item {
+  .circuitItem {
     padding: var(--spacing);
   }
 
-  .circuit-item h3 {
+  .circuitItem h3 {
     font-size: 1.25rem;
   }
 
-  .circuit-item p {
+  .circuitItem p {
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .circuit-grid {
+  .circuitGrid {
     grid-template-columns: 1fr;
     gap: var(--spacing);
   }
@@ -83,15 +83,16 @@ body {
     margin-top: var(--spacing);
   }
 
-  .circuit-item {
+  .circuitItem {
     padding: var(--spacingXS);
   }
 
-  .circuit-item h3 {
+  .circuitItem h3 {
     font-size: 1rem;
   }
 
-  .circuit-item p {
+  .circuitItem p {
     font-size: 0.8rem;
   }
 }
+
