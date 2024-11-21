@@ -1,33 +1,92 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.h2 {
+text-transform: none;
+max-width: 100%;
+color: var(--light);
+font-family: var(--titlePolice);
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+
 .stables-container {
-  color: #fbfcfa;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  text-align: center;
-  border-radius: 1.5rem;
-  height: 50%;
-  justify-items: center;
-  margin: 0 auto;
-  box-shadow: 0.5rem 0.5rem 0.7rem rgba(0.5, 0.5, 0.5, 0.7);
-  width: 60%;
-  row-gap: 80px;
-  margin-top: 5rem;
-  border: 1px solid rgba(0.5, 0.5, 0.5, 0.7);
-  padding-top: 1rem;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  font-size: 1.3rem;
+color: var(--light);
+font-family: var(--textPolice);
+font-size: 1rem;
+border-radius: 0.7rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+text-align: center;
+
 }
 
 .stable-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+background-color: var(--grey);
+border-radius: 0.7rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 1.5rem;
+cursor: pointer;
 }
 
 .flag {
-  width: 50px;
-  height: auto;
-  margin-bottom: 10px;
+width: 7rem;
+border-radius: 0.7rem;
+margin: 1rem 0;
+}
+
+.logo {
+border-radius: 0.7rem;
+margin-bottom: 1rem;
+transition: transform 0.3s ease;
+}
+
+.cars {
+width: 15rem;
+border-radius: 0.7rem;
+}
+
+.drivers-container {
+margin-top: 1rem;
+}
+
+
+@media (min-width: 481px) {
+.stables-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 6rem;
+  margin-right: 6rem;
+  gap:5rem;
+}
+
+
+.stable-item {
+  grid-column: span 2;
+}
+.stable-item.active .logo {
+  transform: scale(1.1);
+}
+
+.stable-item:hover .logo {
+  transform: scale(1.1);
+}
+
+.stable-item .drivers-container,
+.stable-item .cars {
+  display: none;
+}
+
+.stable-item.active .drivers-container,
+.stable-item.active .cars {
+  display: block;
+}
 }

@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import "./Stables.css";
+import "../stables/Stables.css/";
+import Drivers from "./Drivers";
 
-interface Stables {
+interface Stable {
   constructorId: string;
   name: string;
   nationality: string;
 }
 
-const Stables = () => {
-  const [stables, setStables] = useState<Stables[]>([]);
+export default function Stables() {
+  const [stables, setStables] = useState<Stable[]>([]);
+  const [selectedConstructor, setSelectedConstructor] = useState<string | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
@@ -19,6 +21,7 @@ const Stables = () => {
     fetch("https://ergast.com/api/f1/2024/constructors.json")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setStables(data.MRData.ConstructorTable.Constructors);
       })
       .catch((error) => {
@@ -27,22 +30,42 @@ const Stables = () => {
       });
   };
 
+  const handleToggleInfo = (constructorId: string) => {
+    setSelectedConstructor((prev) => (prev === constructorId ? null : constructorId));
+  };
+
   return (
     <section>
-      <h1>F1 Stables</h1>
+      <h2 className="h2">Les Écuries</h2>
       {error ? (
         <p>Erreur lors de la récupération des données.</p>
       ) : (
         <section className="stables-container">
           {stables.map((stable) => (
-            <section key={stable.constructorId}>
-              <article className="stable-item">
+            <section  key={stable.constructorId.toString()} onClick={() => handleToggleInfo(stable.constructorId)}
+            onKeyDown={()=>handleToggleInfo(stable.constructorId)}>
+              <article className={`stable-item ${selectedConstructor === stable.constructorId ? 'active' : ''}`}>
                 <img
                   src={`/images/${stable.nationality.toLowerCase()}.png`}
                   alt={`${stable.nationality} flag`}
                   className="flag"
                 />
+                <img
+                  src={`/images/logos/${stable.constructorId}.png`}
+                  alt={`${stable.constructorId} logo`}
+                  className="logo"
+                />
                 {stable.name}
+                {selectedConstructor === stable.constructorId && (
+                  <>
+                    <img
+                      src={`/images/${stable.name}.png`}
+                      alt={`${stable.name} cars`}
+                      className="cars"
+                    />
+                    <Drivers constructorId={stable.constructorId} />
+                  </>
+                )}
               </article>
             </section>
           ))}
@@ -50,6 +73,4 @@ const Stables = () => {
       )}
     </section>
   );
-};
-
-export default Stables;
+}
