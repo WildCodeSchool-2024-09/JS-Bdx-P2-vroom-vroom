@@ -96,7 +96,7 @@ function App() {
               key={driver.driverId}
               className={`driver-card ${isActive ? "active" : ""}`}
               onClick={() => toggleDriverInfo(driver.driverId)}
-              onKeyDown={() => toggleDriverInfo(driver.driverId)} 
+              onKeyDown={() => toggleDriverInfo(driver.driverId)}
             >
               <section className="image-container">
                 <img
