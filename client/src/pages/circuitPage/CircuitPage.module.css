@@ -5,9 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
   min-height: 100vh;
-  background-color: var(--dark);
   padding: var(--spacing);
 }
 
@@ -16,7 +14,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 50vh;
   width: 100%;
   text-align: center;
