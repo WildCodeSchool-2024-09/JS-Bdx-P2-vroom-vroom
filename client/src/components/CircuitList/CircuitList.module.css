@@ -1,29 +1,24 @@
 @import url("../../variables.css");
 
-body {
-  background-color: var(--dark) !important;
-}
-
 .title {
   color: var(--principalColor);
   text-align: center;
   font-family: var(--titlePolice);
-  font-size: 2.5rem;
-  margin-top: var(--spacingM);
+  font-size: 1.5rem;
+  margin-top: var(--spacing);
 }
 
 .circuitGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--spacing);
   max-width: 1200px;
   margin: var(--spacingM) auto;
-  padding: 0;
   list-style-type: none;
 }
 
 .circuitItem {
-  background-color: var(--grey) !important;
+  background-color: var(--grey);
   padding: var(--spacingXS);
   border-radius: 8px;
   text-align: center;
@@ -36,27 +31,27 @@ body {
 }
 
 .circuitItem h3 {
-  margin: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--textLight);
   font-family: var(--textPolice);
 }
 
 .circuitItem p {
-  margin: var(--spacingXXS) 0 0;
-  font-size: 1rem;
+  margin-top: var(--spacingXXS);
+  font-size: 0.8rem;
   color: var(--lightGrey);
   font-family: var(--textPolice);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 481px) {
+  .title {
+    font-size: 2rem;
+    margin-top: var(--spacingM);
+  }
+
   .circuitGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacingM);
-  }
-
-  .title {
-    font-size: 2rem;
   }
 
   .circuitItem {
@@ -72,26 +67,21 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 769px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
   .circuitGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing);
   }
 
-  .title {
-    font-size: 1.5rem;
-    margin-top: var(--spacing);
-  }
-
-  .circuitItem {
-    padding: var(--spacingXS);
-  }
-
   .circuitItem h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .circuitItem p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }

@@ -8,7 +8,7 @@ export default function CircuitList() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("https://corsproxy.io/?https://ergast.com/api/f1/2024/circuits.json")
+    fetch("https://ergast.com/api/f1/2024/circuits.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Erreur HTTP : ${response.status}`);
