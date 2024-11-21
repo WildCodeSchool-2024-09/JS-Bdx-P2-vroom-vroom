@@ -17,7 +17,9 @@ export default function Drivers({ constructorId }: DriversProps) {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    fetch(`https://ergast.com/api/f1/2024/constructors/${constructorId}/drivers.json`)
+    fetch(
+      `https://ergast.com/api/f1/2024/constructors/${constructorId}/drivers.json`,
+    )
       .then((response) => response.json())
       .then((data) => {
         setDrivers(data.MRData.DriverTable.Drivers);

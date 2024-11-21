@@ -1,92 +1,90 @@
-*{margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .h2 {
-text-transform: none;
-max-width: 100%;
-color: var(--light);
-font-family: var(--titlePolice);
-font-size: 1.5rem;
-margin-bottom: 1rem;
+  text-transform: none;
+  max-width: 100%;
+  color: var(--light);
+  font-family: var(--titlePolice);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .stables-container {
-color: var(--light);
-font-family: var(--textPolice);
-font-size: 1rem;
-border-radius: 0.7rem;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 1rem;
-text-align: center;
-
+  color: var(--light);
+  font-family: var(--textPolice);
+  font-size: 1rem;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
 }
 
 .stable-item {
-background-color: var(--grey);
-border-radius: 0.7rem;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 1.5rem;
-cursor: pointer;
+  background-color: var(--grey);
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
 }
 
 .flag {
-width: 7rem;
-border-radius: 0.7rem;
-margin: 1rem 0;
+  width: 7rem;
+  border-radius: 0.7rem;
+  margin: 1rem 0;
 }
 
 .logo {
-border-radius: 0.7rem;
-margin-bottom: 1rem;
-transition: transform 0.3s ease;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
 }
 
 .cars {
-width: 15rem;
-border-radius: 0.7rem;
+  width: 15rem;
+  border-radius: 0.7rem;
 }
 
 .drivers-container {
-margin-top: 1rem;
+  margin-top: 1rem;
 }
-
 
 @media (min-width: 481px) {
-.stables-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-left: 6rem;
-  margin-right: 6rem;
-  gap:5rem;
-}
+  .stables-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 6rem;
+    margin-right: 6rem;
+    gap: 5rem;
+  }
 
+  .stable-item {
+    grid-column: span 2;
+  }
+  .stable-item.active .logo {
+    transform: scale(1.1);
+  }
 
-.stable-item {
-  grid-column: span 2;
-}
-.stable-item.active .logo {
-  transform: scale(1.1);
-}
+  .stable-item:hover .logo {
+    transform: scale(1.1);
+  }
 
-.stable-item:hover .logo {
-  transform: scale(1.1);
-}
+  .stable-item .drivers-container,
+  .stable-item .cars {
+    display: none;
+  }
 
-.stable-item .drivers-container,
-.stable-item .cars {
-  display: none;
-}
-
-.stable-item.active .drivers-container,
-.stable-item.active .cars {
-  display: block;
-}
+  .stable-item.active .drivers-container,
+  .stable-item.active .cars {
+    display: block;
+  }
 }

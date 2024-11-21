@@ -10,7 +10,9 @@ interface Stable {
 
 export default function Stables() {
   const [stables, setStables] = useState<Stable[]>([]);
-  const [selectedConstructor, setSelectedConstructor] = useState<string | null>(null);
+  const [selectedConstructor, setSelectedConstructor] = useState<string | null>(
+    null,
+  );
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
@@ -21,7 +23,6 @@ export default function Stables() {
     fetch("https://ergast.com/api/f1/2024/constructors.json")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setStables(data.MRData.ConstructorTable.Constructors);
       })
       .catch((error) => {
@@ -31,7 +32,9 @@ export default function Stables() {
   };
 
   const handleToggleInfo = (constructorId: string) => {
-    setSelectedConstructor((prev) => (prev === constructorId ? null : constructorId));
+    setSelectedConstructor((prev) =>
+      prev === constructorId ? null : constructorId,
+    );
   };
 
   return (
@@ -42,9 +45,14 @@ export default function Stables() {
       ) : (
         <section className="stables-container">
           {stables.map((stable) => (
-            <section  key={stable.constructorId.toString()} onClick={() => handleToggleInfo(stable.constructorId)}
-            onKeyDown={()=>handleToggleInfo(stable.constructorId)}>
-              <article className={`stable-item ${selectedConstructor === stable.constructorId ? 'active' : ''}`}>
+            <section
+              key={stable.constructorId.toString()}
+              onClick={() => handleToggleInfo(stable.constructorId)}
+              onKeyDown={() => handleToggleInfo(stable.constructorId)}
+            >
+              <article
+                className={`stable-item ${selectedConstructor === stable.constructorId ? "active" : ""}`}
+              >
                 <img
                   src={`/images/${stable.nationality.toLowerCase()}.png`}
                   alt={`${stable.nationality} flag`}
