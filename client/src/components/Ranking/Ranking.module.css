@@ -7,7 +7,7 @@
 }
 
 .rankingSection {
-  border-radius: 11px;
+  border-radius: var(--radius);
   background-color: var(--grey);
   width: clamp(18rem, 75vw, 35rem);
   margin: var(--spacing) auto;
