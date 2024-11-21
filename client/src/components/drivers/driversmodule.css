@@ -19,6 +19,7 @@ body {
   font-family: var(--titlePolice);
   font-size: 2.5rem;
   margin: var(--spacingXL);
+  padding: var(--spacingL);
 }
 
 .driver-description {
@@ -48,15 +49,37 @@ body {
   border-radius: var(--spacingM);
 }
 
-.driver-card img {
+.image-container {
+  position: relative;
   width: 100%;
   height: auto;
+  overflow: hidden;
   border-radius: var(--spacingM);
-  transition: transform 0.5s ease;
 }
 
-.driver-card:hover img {
-  transform: scale(1.8);
+.driver-hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.driver-card:hover .driver-main-image {
+  opacity: 1;
+  transform: scale(1.7);
+}
+
+.driver-card:hover .driver-hover-image {
+  opacity: 0.5;
+}
+
+.driver-main-image,
+.driver-hover-image {
+  width: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .driver-info {
@@ -76,18 +99,15 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transform: translateY(100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
   border-radius: var(--spacingM);
   gap: var(--spacingL);
 }
 
 .driver-card:hover .driver-info {
   opacity: 1;
-  transform: translateY(0);
 }
 
-@media (max-width: 550px) {
+@media (min-width: 0) {
   .drivers {
     grid-template-columns: 1fr;
     grid-template-rows: none;

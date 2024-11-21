@@ -58,6 +58,7 @@ function formatDateToFrench(dateString: string): string {
 
 function App() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
+  const [activeDriver, setActiveDriver] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("https://ergast.com/api/f1/2024/drivers.json")
@@ -70,12 +71,17 @@ function App() {
       );
   }, []);
 
+  const toggleDriverInfo = (driverId: string) => {
+    setActiveDriver((prev) => (prev === driverId ? null : driverId));
+  };
+
   return (
     <>
       <h1 className="driver-title">Liste des Pilotes F1</h1>
       <ul className="drivers">
         {drivers.map((driver) => {
           const imageUrl = `/images/${driver.driverId}.jpg`;
+          const hoverImageUrl = `/hover-images/${driver.driverId}-hover.jpg`;
           const nationalityInFrench =
             Nationalities[driver.nationality as keyof typeof Nationalities] ||
             driver.nationality;
@@ -83,34 +89,51 @@ function App() {
           const formattedBirthday = formatDateToFrench(driver.dateOfBirth);
           const frenchWikipediaUrl = wikipediaToFrench(driver.url);
 
+          const isActive = activeDriver === driver.driverId;
+
           return (
-            <li key={driver.driverId} className="driver-card">
-              <img
-                src={imageUrl}
-                alt={`${driver.givenName} ${driver.familyName}`}
-              />
+            <li
+              key={driver.driverId}
+              className={`driver-card ${isActive ? "active" : ""}`}
+              onClick={() => toggleDriverInfo(driver.driverId)}
+              onKeyDown={() => toggleDriverInfo(driver.driverId)} 
+            >
+              <section className="image-container">
+                <img
+                  src={imageUrl}
+                  alt={`${driver.givenName} ${driver.familyName}`}
+                  className="driver-main-image"
+                />
+                <img
+                  src={hoverImageUrl}
+                  alt={`${driver.givenName} ${driver.familyName}`}
+                  className="driver-hover-image"
+                />
+              </section>
               <p className="driver-description">
                 {driver.givenName} {driver.familyName}
               </p>
               <p className="nation">{nationalityInFrench}</p>
-              <article className="driver-info">
-                <p>N°{driver.permanentNumber}</p>
-                <p>{age}ans</p>
-                <p>{formattedBirthday}</p>
-                <p>
-                  <a
-                    href={frenchWikipediaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="/images/Wikipedia-Logo.png"
-                      alt="Wikipédia"
-                      style={{ width: "40px", height: "40px" }}
-                    />
-                  </a>
-                </p>
-              </article>
+              {isActive && (
+                <article className="driver-info">
+                  <p className="nation">N°{driver.permanentNumber}</p>
+                  <p>{age} ans</p>
+                  <p>{formattedBirthday}</p>
+                  <p>
+                    <a
+                      href={frenchWikipediaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="/images/Wikipedia-Logo.png"
+                        alt="Wikipédia"
+                        style={{ width: "80px", height: "80px" }}
+                      />
+                    </a>
+                  </p>
+                </article>
+              )}
             </li>
           );
         })}
