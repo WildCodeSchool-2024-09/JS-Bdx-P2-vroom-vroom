@@ -5,29 +5,29 @@
   text-align: center;
   font-family: var(--titlePolice);
   font-size: 1.5rem;
-  margin-top: var(--spacing);
+  margin-top: 1rem;
 }
 
 .circuitGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing);
-  max-width: 1200px;
-  margin: var(--spacingM) auto;
+  gap: 1rem;
+  max-width: 75rem;
+  margin: 2rem auto;
   list-style-type: none;
 }
 
 .circuitItem {
   background-color: var(--grey);
-  padding: var(--spacingXS);
-  border-radius: 8px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   text-align: center;
   transition: transform 0.2s;
   color: var(--textLight);
 }
 
 .circuitItem:hover {
-  transform: translateY(-5px);
+  transform: translateY(-0.3125rem);
 }
 
 .circuitItem h3 {
@@ -37,7 +37,7 @@
 }
 
 .circuitItem p {
-  margin-top: var(--spacingXXS);
+  margin-top: 0.3125rem;
   font-size: 0.8rem;
   color: var(--lightGrey);
   font-family: var(--textPolice);
@@ -46,16 +46,16 @@
 @media (min-width: 481px) {
   .title {
     font-size: 2rem;
-    margin-top: var(--spacingM);
+    margin-top: 2rem;
   }
 
   .circuitGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacingM);
+    gap: 1.5rem;
   }
 
   .circuitItem {
-    padding: var(--spacing);
+    padding: 1rem;
   }
 
   .circuitItem h3 {
@@ -74,7 +74,7 @@
 
   .circuitGrid {
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing);
+    gap: 1rem;
   }
 
   .circuitItem h3 {
