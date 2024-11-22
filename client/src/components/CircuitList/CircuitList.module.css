@@ -5,7 +5,8 @@
   text-align: center;
   font-family: var(--titlePolice);
   font-size: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .circuitGrid {
@@ -13,7 +14,7 @@
   grid-template-columns: 1fr;
   gap: 1rem;
   max-width: 75rem;
-  margin: 2rem auto;
+  margin: 0 auto;
   list-style-type: none;
 }
 

@@ -30,16 +30,16 @@ export default function CircuitList() {
   return (
     <>
       <h1 className={styles.title}>Circuits F1 - Saison 2024</h1>
-      <ul className={styles.circuitGrid}>
+      <main className={styles.circuitGrid}>
         {circuits.map((circuit) => (
-          <li key={circuit.circuitId} className={styles.circuitItem}>
-            <h3>{circuit.circuitName}</h3>
-            <p>
+          <figure key={circuit.circuitId} className={styles.circuitItem}>
+            <h2>{circuit.circuitName}</h2>
+            <figcaption>
               {circuit.Location.locality}, {circuit.Location.country}
-            </p>
-          </li>
+            </figcaption>
+          </figure>
         ))}
-      </ul>
+      </main>
     </>
   );
 }
