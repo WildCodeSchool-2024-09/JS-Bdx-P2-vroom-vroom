@@ -20,7 +20,7 @@ export default function PiloteRanking() {
   const [rank, setRank] = useState<DriverProps[]>([]);
 
   useEffect(() => {
-    fetch("http://ergast.com/api/f1/2024/driverStandings.json")
+    fetch("https://ergast.com/api/f1/2024/driverStandings.json")
       .then((response) => response.json())
       .then((data) =>
         setRank(data.MRData.StandingsTable.StandingsLists[0].DriverStandings),
