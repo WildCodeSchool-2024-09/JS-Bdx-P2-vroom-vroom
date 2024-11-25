@@ -7,7 +7,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import HomePage from "./pages/HomePage";
+import CircuitPage from "./pages/circuitPage/CircuitPage";
 import Stables from "./pages/stables/Stables";
+
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/stables",
     element: <Stables />,
+  },
+  {
+    path: "/circuits",
+    element: <CircuitPage />,
   },
 ]);
 
@@ -58,6 +64,7 @@ createRoot(rootElement).render(
  *
  *      {
  *        path: "/about",
+ *
  *        element: <About />,  // Renders the About component
  *      }
  *
