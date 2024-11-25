@@ -9,8 +9,15 @@
 .rankingSection {
   border-radius: var(--radius);
   background-color: var(--grey);
-  width: clamp(18rem, 75vw, 35rem);
   margin: var(--spacing) auto;
+
+  width: clamp(19rem, 75vw, 35rem);
+  height: 32rem;
+
+  overflow-x: scroll;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .table {
