@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../stables/Stables.css/";
+import "../stables/Stables.css";
 
 interface Driver {
   driverId: string;

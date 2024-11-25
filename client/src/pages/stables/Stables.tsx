@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import "../stables/Stables.css/";
+import "../stables/Stables.css";
+import styles from "../../components/Countdown/Countdown.module.css";
+import RaceCountdown from "../../components/Countdown/Race";
 import Drivers from "./Drivers";
 
 interface Stable {
@@ -38,36 +40,40 @@ export default function Stables() {
   };
 
   return (
-    <section>
-      <h2 className="h2">Les Écuries</h2>
-      {error ? (
-        <p>Erreur lors de la récupération des données.</p>
-      ) : (
-        <section className="stables-container">
-          {stables.map((stable) => (
-            <section
-              key={stable.constructorId.toString()}
-              onClick={() => handleToggleInfo(stable.constructorId)}
-              onKeyDown={() => handleToggleInfo(stable.constructorId)}
-            >
-              <article
-                className={`stable-item ${selectedConstructor === stable.constructorId ? "active" : ""}`}
+    <>
+      <section className={styles.countdownSection}>
+        <RaceCountdown />
+      </section>
+      <section>
+        <h2 className="h2">Les Écuries</h2>
+        {error ? (
+          <p>Erreur lors de la récupération des données.</p>
+        ) : (
+          <section className="stables-container">
+            {stables.map((stable) => (
+              <section
+                key={stable.constructorId.toString()}
+                onClick={() => handleToggleInfo(stable.constructorId)}
+                onKeyDown={() => handleToggleInfo(stable.constructorId)}
               >
-                <img
-                  src={`/images/${stable.nationality.toLowerCase()}.png`}
-                  alt={`${stable.nationality} flag`}
-                  className="flag"
-                />
-
-                {stable.name}
-                {selectedConstructor === stable.constructorId && (
-                  <Drivers constructorId={stable.constructorId} />
-                )}
-              </article>
-            </section>
-          ))}
-        </section>
-      )}
-    </section>
+                <article
+                  className={`stable-item ${selectedConstructor === stable.constructorId ? "active" : ""}`}
+                >
+                  <img
+                    src={`/images/${stable.nationality.toLowerCase()}.png`}
+                    alt={`${stable.nationality} flag`}
+                    className="flag"
+                  />
+                  {stable.name}
+                  {selectedConstructor === stable.constructorId && (
+                    <Drivers constructorId={stable.constructorId} />
+                  )}
+                </article>
+              </section>
+            ))}
+          </section>
+        )}
+      </section>
+    </>
   );
 }
