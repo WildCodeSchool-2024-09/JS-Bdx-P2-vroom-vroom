@@ -58,21 +58,10 @@ export default function Stables() {
                   alt={`${stable.nationality} flag`}
                   className="flag"
                 />
-                <img
-                  src={`/images/logos/${stable.constructorId}.png`}
-                  alt={`${stable.constructorId} logo`}
-                  className="logo"
-                />
+
                 {stable.name}
                 {selectedConstructor === stable.constructorId && (
-                  <>
-                    <img
-                      src={`/images/${stable.name}.png`}
-                      alt={`${stable.name} cars`}
-                      className="cars"
-                    />
-                    <Drivers constructorId={stable.constructorId} />
-                  </>
+                  <Drivers constructorId={stable.constructorId} />
                 )}
               </article>
             </section>

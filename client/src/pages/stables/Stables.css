@@ -33,58 +33,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
-  cursor: pointer;
+  position: relative; /* Important pour positionner le .drivers-container */
+  height: 25rem; /* Fixe la hauteur de l'élément */
+  width: 15rem; /* Fixe la largeur de l'élément */
+  overflow: hidden;
 }
 
 .flag {
-  width: 7rem;
+  width: 10rem;
   border-radius: 0.7rem;
   margin: 1rem 0;
 }
 
-.logo {
-  border-radius: 0.7rem;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.cars {
-  width: 15rem;
-  border-radius: 0.7rem;
-}
-
-.drivers-container {
-  margin-top: 1rem;
-}
-
 @media (min-width: 481px) {
-  .stables-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-left: 6rem;
-    margin-right: 6rem;
-    gap: 5rem;
-  }
+  @media (min-width: 481px) {
+    .stables-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: 8rem;
+      margin-right: 8rem;
+      gap: 5rem;
+      justify-items: center;
+    }
 
-  .stable-item {
-    grid-column: span 2;
-  }
-  .stable-item.active .logo {
-    transform: scale(1.1);
-  }
-
-  .stable-item:hover .logo {
-    transform: scale(1.1);
-  }
-
-  .stable-item .drivers-container,
-  .stable-item .cars {
-    display: none;
-  }
-
-  .stable-item.active .drivers-container,
-  .stable-item.active .cars {
-    display: block;
+    .stable-item {
+      height: 25rem; /* Fixe la hauteur de l'élément */
+      width: 25rem;
+    }
+    .flag:hover {
+      transform: scale(1.1);
+      transform-origin: center;
+    }
   }
 }
