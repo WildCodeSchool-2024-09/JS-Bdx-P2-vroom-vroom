@@ -3,7 +3,7 @@ import type { Circuit } from "../../pages/circuitPage/types";
 import styles from "./CircuitList.module.css";
 
 export default function CircuitList() {
-  const [circuits, setCircuits] = useState<Circuit[]>([]);
+  const [circuits, setCircuits] = useState<(Circuit & { image: string })[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,7 +16,16 @@ export default function CircuitList() {
         return response.json();
       })
       .then((data) => {
-        const circuitsData = data.MRData.CircuitTable.Circuits;
+        const circuitsData = data.MRData.CircuitTable.Circuits.map(
+          (circuit: Circuit) => {
+            const imageName = circuit.circuitId;
+            const imagePath = `/imagesCircuits/${imageName}.jpg`;
+            return {
+              ...circuit,
+              image: imagePath,
+            };
+          },
+        );
         setCircuits(circuitsData);
         setError(null);
       })
@@ -33,6 +42,11 @@ export default function CircuitList() {
       <main className={styles.circuitGrid}>
         {circuits.map((circuit) => (
           <figure key={circuit.circuitId} className={styles.circuitItem}>
+            <img
+              src={circuit.image}
+              alt={`Vue du circuit ${circuit.circuitName}`}
+              className={styles.circuitImage}
+            />
             <h2>{circuit.circuitName}</h2>
             <figcaption>
               {circuit.Location.locality}, {circuit.Location.country}
