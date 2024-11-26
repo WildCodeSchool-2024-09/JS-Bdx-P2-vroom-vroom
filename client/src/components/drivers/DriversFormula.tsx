@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./driversmodule.css";
+import styles from "./drivers.module.css";
 
 interface Driver {
   driverId: string;
@@ -77,8 +77,8 @@ function App() {
 
   return (
     <>
-      <h1 className="driver-title">Liste des Pilotes F1</h1>
-      <ul className="drivers">
+      <h1 className={styles.drivertitle}>Liste des Pilotes F1 - Saison 2024</h1>
+      <ul className={styles.drivers}>
         {drivers.map((driver) => {
           const imageUrl = `/images/${driver.driverId}.jpg`;
           const hoverImageUrl = `/hover-images/${driver.driverId}-hover.jpg`;
@@ -94,29 +94,29 @@ function App() {
           return (
             <li
               key={driver.driverId}
-              className={`driver-card ${isActive ? "active" : ""}`}
+              className={`${styles.drivercard} ${isActive ? styles.active : ""}`}
               onClick={() => toggleDriverInfo(driver.driverId)}
               onKeyDown={() => toggleDriverInfo(driver.driverId)}
             >
-              <section className="image-container">
+              <section className={styles.imagecontainer}>
                 <img
                   src={imageUrl}
                   alt={`${driver.givenName} ${driver.familyName}`}
-                  className="driver-main-image"
+                  className={styles.drivermainimage}
                 />
                 <img
                   src={hoverImageUrl}
                   alt={`${driver.givenName} ${driver.familyName}`}
-                  className="driver-hover-image"
+                  className={styles.driverhoverimage}
                 />
               </section>
-              <p className="driver-description">
+              <p className={styles.driverdescription}>
                 {driver.givenName} {driver.familyName}
               </p>
-              <p className="nation">{nationalityInFrench}</p>
+              <p className={styles.nation}>{nationalityInFrench}</p>
               {isActive && (
-                <article className="driver-info">
-                  <p className="nation">N°{driver.permanentNumber}</p>
+                <article className={styles.driverinfo}>
+                  <p className={styles.nation}>N°{driver.permanentNumber}</p>
                   <p>{age} ans</p>
                   <p>{formattedBirthday}</p>
                   <p>

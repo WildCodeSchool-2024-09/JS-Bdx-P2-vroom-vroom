@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 /* ************************************************************************* */
 
 // Import the main app component
+import DriverPage from "./pages/DriverPage/DriverPage";
 import HomePage from "./pages/HomePage";
 import CircuitPage from "./pages/circuitPage/CircuitPage";
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/circuits",
     element: <CircuitPage />,
+  },
+  {
+    path: "/drivers",
+    element: <DriverPage />,
   },
 ]);
 
