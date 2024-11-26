@@ -11,18 +11,18 @@ function NavBar() {
         </Link>
         <nav className="NavBar">
           <ul className="liens">
-            <Link to="/calendar" className="lien">
-              Calendrier
+          <Link to="/pilotes" className="lien">
+              Pilotes
+            </Link>
+            <Link to="/constructeurs" className="lien">
+              Ecuries
             </Link>
             <Link to="/circuits" className="lien">
               Circuits
             </Link>
-            <Link to="/pilotes" className="lien">
-              Pilotes
-            </Link>
-            <Link to="/écuries" className="lien">
-              Ecuries
-            </Link>
+            <Link to="/calendar" className="lien">
+              Calendrier
+            </Link> 
           </ul>
         </nav>
       </header>

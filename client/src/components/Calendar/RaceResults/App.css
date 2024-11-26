@@ -3,6 +3,7 @@
   --inset: #0c0c0c;
 }
 .affichage {
+  background-color: var(--grey);
   padding: 1rem;
   border-radius: 11px;
   position: absolute;
@@ -38,7 +39,6 @@
   font-family: var(--textPolice);
   background-color: var(--grey);
   list-style-type: none;
-  border-radius: 10px;
 }
 .otherButton {
   width: 100%;
