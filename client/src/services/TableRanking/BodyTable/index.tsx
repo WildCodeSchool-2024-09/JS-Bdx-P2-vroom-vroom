@@ -6,9 +6,10 @@ import type { TeamProps } from "../../../components/Ranking/TeamRanking";
 export type BodyTableProps = {
   team: TeamProps | DriverProps;
   isLast: boolean;
+  isFirst: boolean;
 };
 
-export default function BodyTable({ team, isLast }: BodyTableProps) {
+export default function BodyTable({ team, isLast, isFirst }: BodyTableProps) {
   return (
     <>
       {"Constructor" in team ? (
@@ -31,7 +32,14 @@ export default function BodyTable({ team, isLast }: BodyTableProps) {
             <td rowSpan={2} className={styles.tableMainInfo}>
               {team.position}
             </td>
-            <td className={styles.tableMainInfo}>
+            <td
+              className={
+                isFirst
+                  ? `${styles.tableMainInfo} ${styles.tableFirstRow}`
+                  : `${styles.tableMainInfo}`
+              }
+            >
+              {isFirst ? "🏆 " : ""}
               {team.Driver.givenName} {team.Driver.familyName}
             </td>
             <td rowSpan={2}>{team.points}</td>
