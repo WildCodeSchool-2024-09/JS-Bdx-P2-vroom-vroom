@@ -20,8 +20,8 @@ function NavBar() {
             <Link to="/pilotes" className="lien">
               Pilotes
             </Link>
-            <Link to="/écuries" className="lien">
-              Ecuries
+            <Link to="/stables" className="lien">
+              Écuries
             </Link>
           </ul>
         </nav>
