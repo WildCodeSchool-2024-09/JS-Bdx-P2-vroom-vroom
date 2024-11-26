@@ -3,6 +3,7 @@ import "../stables/Stables.css";
 import styles from "../../components/Countdown/Countdown.module.css";
 import RaceCountdown from "../../components/Countdown/Race";
 import Drivers from "./Drivers";
+import NavBar from "../../components/NavBar";
 
 interface Stable {
   constructorId: string;
@@ -41,8 +42,10 @@ export default function Stables() {
 
   return (
     <>
+    <NavBar />
       <section className={styles.countdownSection}>
         <RaceCountdown />
+        
       </section>
       <section>
         <h2 className="h2">Les Écuries</h2>
