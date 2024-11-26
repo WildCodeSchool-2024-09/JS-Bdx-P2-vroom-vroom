@@ -1,6 +1,6 @@
 @import url("../../variables.css");
 
-.circuitPageContainer {
+/*.circuitPageContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -18,7 +18,7 @@
   width: 100%;
   text-align: center;
 
-  background-image: url("../../assets/images/countdown_bg.avif");
+  /*background-image: url("../../assets/images/countdown_bg.avif");
   background-size: cover;
   background-position: center 75%;
   border-bottom: 5px solid var(--principalColor);
@@ -28,4 +28,4 @@
 .circuitListContainer {
   margin-top: var(--spacingM);
   width: 100%;
-}
+}*/

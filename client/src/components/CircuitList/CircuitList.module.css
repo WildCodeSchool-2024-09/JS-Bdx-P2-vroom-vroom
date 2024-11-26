@@ -25,6 +25,7 @@
   text-align: center;
   transition: transform 0.2s;
   color: var(--textLight);
+  border: none; /* Assurer qu'il n'y a pas de bordure autour de l'élément */
 }
 
 .circuitItem:hover {
@@ -44,13 +45,71 @@
   font-family: var(--textPolice);
 }
 
+/* Bouton autour des images */
+.circuitButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  width: 100%; /* Assurer une bonne structure */
+}
+
+/* Images dans le grid */
 .circuitImage {
   width: 100%;
   height: 12rem;
   object-fit: cover;
   border-radius: 0.5rem;
+  border: none; /* Supprimer les bordures autour des images */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.circuitItem:hover .circuitImage {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.largeImage {
+  transform: scale(1.05); /* Légère mise en avant si sélectionnée */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles pour l'image agrandie */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.enlargedImage {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animation pour l'apparition de l'image agrandie */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
 @media (min-width: 481px) {
   .title {
     font-size: 2rem;

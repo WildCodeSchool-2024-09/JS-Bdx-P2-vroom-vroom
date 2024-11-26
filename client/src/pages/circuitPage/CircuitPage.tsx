@@ -1,17 +1,17 @@
 import CircuitList from "../../components/CircuitList";
 import RaceCountdown from "../../components/Countdown/Race";
-import styles from "./CircuitPage.module.css";
+import style from "../../components/Countdown/Countdown.module.css";
 
 export default function CircuitPage() {
   return (
-    <div className={styles.circuitPageContainer}>
-      <section className={styles.raceCountdownContainer}>
+    <>
+      <section className={style.countdownSection}>
         <RaceCountdown />
       </section>
 
-      <section className={styles.circuitListContainer}>
+      <section>
         <CircuitList />
       </section>
-    </div>
+    </>
   );
 }
