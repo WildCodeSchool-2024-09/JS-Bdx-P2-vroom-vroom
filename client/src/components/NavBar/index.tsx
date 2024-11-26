@@ -11,7 +11,7 @@ function NavBar() {
         </Link>
         <nav className="NavBar">
           <ul className="liens">
-          <Link to="/pilotes" className="lien">
+            <Link to="/pilotes" className="lien">
               Pilotes
             </Link>
             <Link to="/constructeurs" className="lien">
@@ -22,7 +22,7 @@ function NavBar() {
             </Link>
             <Link to="/calendar" className="lien">
               Calendrier
-            </Link> 
+            </Link>
           </ul>
         </nav>
       </header>
