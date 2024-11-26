@@ -41,6 +41,7 @@ export default function TableRanking({
               }
               team={team}
               isLast={index === rows.length - 1}
+              isFirst={index === 0}
             />
           ))}
         </tbody>
