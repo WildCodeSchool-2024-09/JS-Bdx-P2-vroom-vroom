@@ -1,0 +1,21 @@
+@import url("../../variables.css");
+
+.basDePage {
+  font-family: var(--textPolice);
+  text-decoration: none;
+  color: var(--light);
+  background-color: var(--dark);
+  text-decoration: none;
+  text-align: center;
+}
+.retourHautPage {
+  color: var(--textPolice);
+  text-decoration: none;
+}
+.retourHautPage {
+  color: var(--light);
+  scroll-behavior: smooth;
+}
+.retourHautPage:hover {
+  color: var(--principalColor);
+}

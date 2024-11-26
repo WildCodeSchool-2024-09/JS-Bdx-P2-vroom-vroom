@@ -1,0 +1,68 @@
+@import url(../../../variables.css);
+:root {
+  --inset: #0c0c0c;
+}
+.affichage {
+  padding: 1rem;
+  border-radius: 11px;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+  min-width: 15rem;
+  border: 1px solid var(--light);
+  box-shadow: inset 2px 3px 12px 0px var(--inset);
+  z-index: 10000;
+}
+.button {
+  border: 0px solid;
+  background-color: var(--grey);
+  margin-bottom: 1rem;
+  margin-top: .5rem;
+  cursor: pointer;
+}
+.imageButton {
+  box-shadow: inset 2px 3px 12px 0px var(--inset);
+  border-radius: 50px;
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem;
+  background-color: var(--principalColor);
+}
+.imageButton:hover {
+  width: 4rem;
+  height: 4rem;
+  transition: all 1s;
+}
+.resultsList {
+  font-family: var(--textPolice);
+  background-color: var(--grey);
+  list-style-type: none;
+  border-radius: 10px;
+}
+.otherButton {
+  width: 100%;
+  border: 0 solid;
+}
+.result-item {
+  color: var(--light);
+  font-family: var(--textPolice);
+  font-size: 1rem;
+  line-height: 1.35rem;
+  display: flex;
+  align-items: flex-start;
+}
+.pointsCircuits {
+  margin-left: auto;
+}
+.containerResults {
+  background-color: var(--grey);
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 481px) {
+  .button {
+    margin-right: .5rem;
+  }
+}
