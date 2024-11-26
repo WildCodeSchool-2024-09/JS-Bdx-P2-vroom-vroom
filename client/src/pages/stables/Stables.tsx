@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import "../stables/Stables.css";
 import styles from "../../components/Countdown/Countdown.module.css";
 import RaceCountdown from "../../components/Countdown/Race";
+import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import Drivers from "./Drivers";
-import Footer from "../../components/Footer";
 
 interface Stable {
   constructorId: string;
