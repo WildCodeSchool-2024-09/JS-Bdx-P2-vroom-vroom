@@ -1,6 +1,6 @@
 import CircuitList from "../../components/CircuitList";
-import RaceCountdown from "../../components/Countdown/Race";
 import style from "../../components/Countdown/Countdown.module.css";
+import RaceCountdown from "../../components/Countdown/Race";
 
 export default function CircuitPage() {
   return (
