@@ -40,7 +40,7 @@ export default function CircuitList() {
 
   const handleOverlayKey = (e: React.KeyboardEvent) => {
     if (e.key === "Escape") {
-      setSelectedImage(null); // Réduire l'image si "Escape" est pressé
+      setSelectedImage(null);
     }
   };
 
