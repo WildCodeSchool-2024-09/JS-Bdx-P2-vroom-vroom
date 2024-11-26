@@ -1,0 +1,42 @@
+@import url("../../variables.css");
+
+.hautPage {
+  background-color: var(--dark);
+  position: sticky;
+  top: 0;
+  height: auto;
+  z-index: 9999;
+}
+
+.logo {
+  height: 30px;
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+}
+.lien {
+  color: var(--light);
+  text-decoration: none;
+}
+.lien:hover {
+  color: var(--principalColor);
+}
+.NavBar .liens {
+  font-family: var(--textPolice);
+  color: var(--light);
+  margin-top: 4rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 481px) {
+  .hautPage {
+    position: relative;
+    margin: 0 1rem 0 1rem;
+  }
+  .logo {
+    height: 50px;
+  }
+}
