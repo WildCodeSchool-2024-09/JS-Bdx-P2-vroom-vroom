@@ -1,5 +1,7 @@
 @import url(../../../variables.css);
-
+:root {
+  --inset: #0c0c0c;
+}
 .affichage {
   padding: 1rem;
   border-radius: 11px;
@@ -9,7 +11,7 @@
   transform: translate(-50%, -50%);
   min-width: 15rem;
   border: 1px solid var(--light);
-  box-shadow: inset 2px 3px 12px 0px #000000;
+  box-shadow: inset 2px 3px 12px 0px var(--inset);
   z-index: 10000;
 }
 .button {
@@ -20,7 +22,7 @@
   cursor: pointer;
 }
 .imageButton {
-  box-shadow: inset 2px 3px 12px 0px #000000;
+  box-shadow: inset 2px 3px 12px 0px var(--inset);
   border-radius: 50px;
   width: 3rem;
   height: 3rem;
