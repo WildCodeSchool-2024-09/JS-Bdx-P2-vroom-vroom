@@ -17,6 +17,12 @@
   height: 50vh;
   width: 100%;
   text-align: center;
+
+  background-image: url("../../assets/images/countdown_bg.avif");
+  background-size: cover;
+  background-position: center 75%;
+  border-bottom: 5px solid var(--principalColor);
+  border-top: 5px solid var(--principalColor);
 }
 
 .circuitListContainer {

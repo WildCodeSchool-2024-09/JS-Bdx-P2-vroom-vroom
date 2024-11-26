@@ -4,7 +4,7 @@ import styles from "./CircuitPage.module.css";
 
 export default function CircuitPage() {
   return (
-    <>
+    <div className={styles.circuitPageContainer}>
       <section className={styles.raceCountdownContainer}>
         <RaceCountdown />
       </section>
@@ -12,6 +12,6 @@ export default function CircuitPage() {
       <section className={styles.circuitListContainer}>
         <CircuitList />
       </section>
-    </>
+    </div>
   );
 }
