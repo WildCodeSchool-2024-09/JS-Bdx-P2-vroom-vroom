@@ -4,6 +4,7 @@ import styles from "../../components/Countdown/Countdown.module.css";
 import RaceCountdown from "../../components/Countdown/Race";
 import NavBar from "../../components/NavBar";
 import Drivers from "./Drivers";
+import Footer from "../../components/Footer";
 
 interface Stable {
   constructorId: string;
@@ -76,6 +77,7 @@ export default function Stables() {
           </section>
         )}
       </section>
+      <Footer />
     </>
   );
 }
