@@ -10,6 +10,8 @@ import App from "./App";
 import RaceCalendar from "./components/Calendar/RaceCalendar";
 import HomePage from "./pages/HomePage";
 import CircuitPage from "./pages/circuitPage/CircuitPage";
+import Stables from "./pages/stables/Stables";
+
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <HomePage />,
+  },
+  {
+    path: "/stables",
+    element: <Stables />,
   },
   {
     path: "/calendar",
@@ -68,6 +74,7 @@ createRoot(rootElement).render(
  *
  *      {
  *        path: "/about",
+ *
  *        element: <About />,  // Renders the About component
  *      }
  *
