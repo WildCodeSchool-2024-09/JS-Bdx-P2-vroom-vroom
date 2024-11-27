@@ -1,7 +1,9 @@
+
 import "./app.css";
 
 function Footer() {
   return (
+    <>
     <footer className="basDePage">
       <p>
         {" "}
@@ -17,6 +19,7 @@ function Footer() {
         </a>
       </p>
     </footer>
+    </>
   );
 }
 export default Footer;

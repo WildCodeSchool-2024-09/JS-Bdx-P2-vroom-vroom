@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
 import "../stables/Stables.css";
-import styles from "../../components/Countdown/Countdown.module.css";
-import RaceCountdown from "../../components/Countdown/Race";
-import Footer from "../../components/Footer";
-import NavBar from "../../components/NavBar";
 import Drivers from "./Drivers";
 
 interface Stable {
@@ -43,10 +39,6 @@ export default function Stables() {
 
   return (
     <>
-      <NavBar />
-      <section className={styles.countdownSection}>
-        <RaceCountdown />
-      </section>
       <section>
         <h2 className="h2">Les Écuries</h2>
         {error ? (
@@ -77,7 +69,6 @@ export default function Stables() {
           </section>
         )}
       </section>
-      <Footer />
     </>
   );
 }

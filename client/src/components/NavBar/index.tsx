@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <>
       <header className="hautPage">
-        <Link to="/home">
+        <Link to="/">
           <img className="logo" src={logo} alt="Logo Vroom Vroom" />
         </Link>
         <nav className="NavBar">
@@ -14,7 +14,7 @@ function NavBar() {
             <Link to="/pilotes" className="lien">
               Pilotes
             </Link>
-            <Link to="/constructeurs" className="lien">
+            <Link to="/stables" className="lien">
               Ecuries
             </Link>
             <Link to="/circuits" className="lien">

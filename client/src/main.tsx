@@ -8,9 +8,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import RaceCalendar from "./components/Calendar/RaceCalendar";
-import HomePage from "./pages/HomePage";
 import CircuitPage from "./pages/circuitPage/CircuitPage";
 import Stables from "./pages/stables/Stables";
+import Ranking from "./components/Ranking";
+
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -23,27 +24,32 @@ import Stables from "./pages/stables/Stables";
 // Create router configuration with routes
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
-  {
-    path: "/", // The root path
-    element: <App />, // Renders the App component for the home page
+  { // The root path
+    element: <App />,
+    children: [
+      {
+        path:"/",
+        element: <Ranking />
+      },
+      
+      {
+        path: "/stables",
+        element: <Stables />,
+      },
+      {
+        path: "/calendar",
+        element: <RaceCalendar />,
+      },
+      {
+        path: "/circuits",
+        element: <CircuitPage />,
+      },
+  
+    ]
+     // Renders the App component for the home page
   },
   // Try adding a new route! For example, "/about" with an About component
-  {
-    path: "/home",
-    element: <HomePage />,
-  },
-  {
-    path: "/stables",
-    element: <Stables />,
-  },
-  {
-    path: "/calendar",
-    element: <RaceCalendar />,
-  },
-  {
-    path: "/circuits",
-    element: <CircuitPage />,
-  },
+ 
 ]);
 
 /* ************************************************************************* */
