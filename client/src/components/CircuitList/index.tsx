@@ -49,7 +49,7 @@ export default function CircuitList() {
 
   return (
     <>
-      <h1 className={styles.title}>Circuits F1 - Saison 2024</h1>
+      <h2 className={styles.title}>Circuits F1 - Saison 2024</h2>
       <main className={styles.circuitGrid}>
         {circuits.map((circuit) => (
           <figure key={circuit.circuitId} className={styles.circuitItem}>

@@ -1,7 +1,7 @@
 @import url("../../variables.css");
 
 .title {
-  color: var(--principalColor);
+  color: var(--textLight);
   text-align: center;
   font-family: var(--titlePolice);
   font-size: 1.5rem;
