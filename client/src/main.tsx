@@ -9,6 +9,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import RaceCalendar from "./components/Calendar/RaceCalendar";
 import Ranking from "./components/Ranking";
+import DriverPage from "./pages/DriverPage/DriverPage";
 import CircuitPage from "./pages/circuitPage/CircuitPage";
 import Stables from "./pages/stables/Stables";
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/stables",
         element: <Stables />,
+      },
+      {
+        path: "/pilotes",
+        element: <DriverPage />,
       },
       {
         path: "/calendar",
