@@ -14,7 +14,7 @@
 .stables-container {
   font-family: var(--titlePolice);
   color: var(--principalColor);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   border-radius: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -33,12 +33,12 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 22rem;
-  width: 22rem;
+  height: 19rem;
+  width: 19rem;
 }
 
 .flag {
-  width: 18rem;
+  width: 17rem;
   border-radius: 0.7rem;
   margin: 1rem;
 }
