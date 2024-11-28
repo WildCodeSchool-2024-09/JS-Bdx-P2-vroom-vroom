@@ -1,11 +1,5 @@
 @import url("../../variables.css");
 
-body {
-  background-color: var(--dark);
-  color: var(--light);
-  font-family: var(--textPolice);
-}
-
 .drivertitle {
   color: var(--light);
   text-align: center;
