@@ -21,8 +21,24 @@ export default function RemainingTimeLeft({
   useEffect(() => {
     const interval = setInterval(() => {
       const actualDate = new Date();
+      const localNow = new Date(
+        actualDate.getFullYear(),
+        actualDate.getMonth(),
+        actualDate.getDate(),
+        actualDate.getHours(),
+        actualDate.getMinutes(),
+        actualDate.getSeconds(),
+      );
+      const localFinalDate = new Date(
+        finalDate.getUTCFullYear(),
+        finalDate.getUTCMonth(),
+        finalDate.getUTCDate(),
+        finalDate.getUTCHours(),
+        finalDate.getUTCMinutes(),
+        finalDate.getUTCSeconds(),
+      );
 
-      const diff = finalDate.getTime() - actualDate.getTime();
+      const diff = localFinalDate.getTime() - localNow.getTime();
       const days = Math.floor(diff / (24 * 60 * 60 * 1000));
       const hours = Math.floor(
         (diff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000),
@@ -41,9 +57,9 @@ export default function RemainingTimeLeft({
       <p className={styles.countdownText}>{titleCountdown}</p>
       <time className={styles.countdownTimeLeft} dateTime="ww dd hh mm ss">
         <span>{timeLeft.days}</span>
-        <span>{timeLeft.hours}</span>
-        <span>{timeLeft.minutes}</span>
-        <span>{timeLeft.seconds}</span>
+        <span>{timeLeft.hours.toString().padStart(2, "0")}</span>
+        <span>{timeLeft.minutes.toString().padStart(2, "0")}</span>
+        <span>{timeLeft.seconds.toString().padStart(2, "0")}</span>
       </time>
       <p className={styles.countdownText}>Jours</p>
       <p className={styles.countdownText}>Heures</p>

@@ -6,7 +6,12 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 /* ************************************************************************* */
 
 // Import the main app component
-import HomePage from "./pages/HomePage";
+import App from "./App";
+import RaceCalendar from "./components/Calendar/RaceCalendar";
+import Ranking from "./components/Ranking";
+import DriverPage from "./pages/DriverPage/DriverPage";
+import CircuitPage from "./pages/circuitPage/CircuitPage";
+import Stables from "./pages/stables/Stables";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -19,11 +24,35 @@ import HomePage from "./pages/HomePage";
 // Create router configuration with routes
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
-  // Try adding a new route! For example, "/about" with an About component
   {
-    path: "/",
-    element: <HomePage />,
+    // The root path
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Ranking />,
+      },
+
+      {
+        path: "/stables",
+        element: <Stables />,
+      },
+      {
+        path: "/pilotes",
+        element: <DriverPage />,
+      },
+      {
+        path: "/calendar",
+        element: <RaceCalendar />,
+      },
+      {
+        path: "/circuits",
+        element: <CircuitPage />,
+      },
+    ],
+    // Renders the App component for the home page
   },
+  // Try adding a new route! For example, "/about" with an About component
 ]);
 
 /* ************************************************************************* */
@@ -54,6 +83,7 @@ createRoot(rootElement).render(
  *
  *      {
  *        path: "/about",
+ *
  *        element: <About />,  // Renders the About component
  *      }
  *

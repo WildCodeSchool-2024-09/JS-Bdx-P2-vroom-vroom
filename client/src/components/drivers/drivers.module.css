@@ -1,0 +1,116 @@
+@import url("../../variables.css");
+
+.drivertitle {
+  color: var(--light);
+  text-align: center;
+  font-family: var(--titlePolice);
+  font-size: 2.5rem;
+  margin: var(--spacingXL);
+  padding: var(--spacingL);
+}
+
+.driverdescription {
+  text-align: center;
+  font-size: 2rem;
+  margin: var(--spacingXS) auto;
+  list-style-type: none;
+}
+
+.nation {
+  font-size: 2rem;
+  font-family: var(--titlePolice);
+  color: var(--principalColor);
+}
+
+.drivers {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacingM);
+}
+
+.drivercard {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-radius: var(--spacingM);
+}
+
+.imagecontainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: var(--spacingM);
+}
+
+.driverhoverimage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.drivercard:hover .drivermainimage {
+  opacity: 1;
+  transform: scale(1.7);
+}
+
+.drivercard:hover .driverhoverimage {
+  opacity: 0.5;
+}
+
+.drivermainimage,
+.driverhoverimage {
+  width: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.driverinfo {
+  color: var(--light);
+  font-family: var(--textPolice);
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--hover);
+  color: var(--light);
+  padding: var(--spacingXS);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: var(--spacingM);
+  gap: var(--spacingL);
+}
+
+.drivercard:hover .driverinfo {
+  opacity: 1;
+}
+
+@media (min-width: 0) {
+  .drivers {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+}
+
+@media (min-width: 551px) {
+  .drivers {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .drivers {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
