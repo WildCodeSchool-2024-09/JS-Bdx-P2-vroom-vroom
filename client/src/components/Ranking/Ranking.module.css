@@ -24,7 +24,6 @@
   font-family: var(--textPolice);
   color: var(--light);
   text-align: center;
-  width: clamp(18rem, 75vw, 35rem);
 }
 
 .tableHeader {

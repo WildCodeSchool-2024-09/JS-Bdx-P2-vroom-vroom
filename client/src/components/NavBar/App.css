@@ -2,17 +2,13 @@
 
 .hautPage {
   background-color: var(--dark);
-  position: sticky;
-  top: 0;
-  height: auto;
-  z-index: 9999;
 }
 
 .logo {
   height: 30px;
   display: block;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .lien {
   color: var(--light);
@@ -24,18 +20,14 @@
 .NavBar .liens {
   font-family: var(--textPolice);
   color: var(--light);
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   list-style: none;
   display: flex;
   justify-content: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 @media screen and (min-width: 481px) {
-  .hautPage {
-    position: relative;
-    margin: 0 1rem 0 1rem;
-  }
   .logo {
     height: 50px;
   }

@@ -1,8 +1,4 @@
 import { useEffect, useState } from "react";
-import styles from "../../Countdown/Countdown.module.css";
-import RaceCountdown from "../../Countdown/Race";
-import Footer from "../../Footer";
-import NavBar from "../../NavBar";
 import RaceResults from "../RaceResults";
 import "./App.css";
 
@@ -30,10 +26,6 @@ function RaceCalendar() {
   };
   return (
     <>
-      <NavBar />
-      <section className={styles.countdownSection}>
-        <RaceCountdown />
-      </section>
       <section className="calendar">
         <h2 className="titleCalendar">F1 Calendrier 2024</h2>
         {races.map((race) => (
@@ -52,7 +44,6 @@ function RaceCalendar() {
           </article>
         ))}
       </section>
-      <Footer />
     </>
   );
 }
