@@ -44,7 +44,7 @@ export default function Stables() {
         {error ? (
           <p>Erreur lors de la récupération des données.</p>
         ) : (
-          <section className="stables-container">
+          <section className="stablesContainer">
             {stables.map((stable) => (
               <section
                 key={stable.constructorId.toString()}
@@ -52,7 +52,7 @@ export default function Stables() {
                 onKeyDown={() => handleToggleInfo(stable.constructorId)}
               >
                 <article
-                  className={`stable-item ${selectedConstructor === stable.constructorId ? "active" : ""}`}
+                  className={`stableItem ${selectedConstructor === stable.constructorId ? "active" : ""}`}
                 >
                   <img
                     src={`/images/${stable.nationality.toLowerCase()}.png`}
