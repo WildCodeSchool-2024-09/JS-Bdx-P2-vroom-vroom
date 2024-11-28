@@ -16,4 +16,5 @@
   --spacingXXXS: calc(var(--spacing) * 0.25);
   --spacingM: calc(var(--spacing) * 1.5);
   --spacingL: calc(var(--spacing) * 2.5);
+  --radius: 11px;
 }

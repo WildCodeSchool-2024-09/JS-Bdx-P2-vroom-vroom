@@ -3,11 +3,12 @@
   --inset: #0c0c0c;
 }
 .affichage {
+  background-color: var(--grey);
   padding: 1rem;
-  border-radius: 11px;
+  border-radius: var(--radius);
   position: absolute;
   top: -50%;
-  left: -50%;
+  left: 0;
   transform: translate(-50%, -50%);
   min-width: 15rem;
   border: 1px solid var(--light);
@@ -29,16 +30,10 @@
   margin: 1rem;
   background-color: var(--principalColor);
 }
-.imageButton:hover {
-  width: 4rem;
-  height: 4rem;
-  transition: all 1s;
-}
 .resultsList {
   font-family: var(--textPolice);
   background-color: var(--grey);
   list-style-type: none;
-  border-radius: 10px;
 }
 .otherButton {
   width: 100%;
@@ -64,5 +59,8 @@
 @media screen and (min-width: 481px) {
   .button {
     margin-right: .5rem;
+  }
+  .affichage {
+    left: -50%;
   }
 }

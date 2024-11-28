@@ -6,22 +6,22 @@ function NavBar() {
   return (
     <>
       <header className="hautPage">
-        <Link to="/home">
+        <Link to="/">
           <img className="logo" src={logo} alt="Logo Vroom Vroom" />
         </Link>
         <nav className="NavBar">
           <ul className="liens">
-            <Link to="/calendar" className="lien">
-              Calendrier
-            </Link>
-            <Link to="/circuits" className="lien">
-              Circuits
-            </Link>
             <Link to="/pilotes" className="lien">
               Pilotes
             </Link>
             <Link to="/stables" className="lien">
-              Écuries
+              Ecuries
+            </Link>
+            <Link to="/circuits" className="lien">
+              Circuits
+            </Link>
+            <Link to="/calendar" className="lien">
+              Calendrier
             </Link>
           </ul>
         </nav>
